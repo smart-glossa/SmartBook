@@ -7,7 +7,7 @@ public class projectIssueVO {
 	String discription;
 	int userId;
 	long findtime;
-	long fixedtimeSample;
+	long fixedtime;
 	
 	public long getIssueId()
 	{
