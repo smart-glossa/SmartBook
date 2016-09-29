@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/admin.css">
+	<script type="text/javascript" src="js/adminValidation.js"></script>
+	<script src="js/jquery-1.12.3.js"></script>
+
+  <script type="text/javascript" src="js/addadmin.js"></script>
+</head>
+<body>
+<div class="head">
+	<h1 align="center">SMARTPROJECT</ h1>
+	
+</div>
+
+</div>
+<div class="empty"></div>
+<div>
+	<div class="imgd">
+		<img src="images/proj.jpg" id="img">
+	</div>
+	<div class="login">
+		<h2>CREATE AN ACCOUNT</h2>
+		<label for="Name">NAME</label>
+		<input  required="" class="input" name="Name" placeholder="Enter Name" id="Name"><hr>
+		<label for="Date of birth">DATE OF BIRTH</label>
+		<input required="" class="input" type="text" name="dob" placeholder="Date Of Birth" id="dob" onfocus="(this.type='date')"/><hr>
+		<label for="username">USERNAME</label>
+		<input  required="" class="input" name="userName" placeholder="Enter username" id="userName"><hr>
+		<label for="password">PASSWORD</label>
+		<input required="" class="input" type="password" name="pass" placeholder="Enter password" id="pass"><hr>
+		<!--<input type="file" class="input" name="photo" id="photo" required=".jpg,.png,.gif"><hr>-->
+		<label for="Type">TYPE</label>
+		<select name="type" id="type">
+		<option selected="selected">Select type</option>
+		<option>Admin</option>
+		<option>User</option></select><hr>
+		<button id="lbut" onclick="validateFunction()">CREATE ACCOUNT</button>
+		<a href="login.html">LOGIN</a>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.but').click(function(){
+			$('#signin').slideToggle("slow");
+		});
+	});
+</script>
+</body>
+</html>

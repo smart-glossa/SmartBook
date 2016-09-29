@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<style>
+#para{
+	border-style: solid;
+
+}
+</style>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+function getwords() {
+  text = words.value;
+  document.getElementById("para").innerHTML += '<p>'+text+'<hr?>'
+  document.getElementById("words").value = "enter"
+}
+</script>
+      
+<link rel="stylesheet" type="text/css" href="css/edit.css">
+</head>
+<body>
+<!--<div id="ss">-->
+<center>
+<h3>add project</h3>
+ <form>
+ <table>
+ <tr>
+   <td>title: </td><td><input type="text" class="inputs" placeholder="Title" id="" /></td></tr> 
+<tr>
+<td>
+   due date: </td><td><input type="text" class="inputs" placeholder="Duedate" id="" /></td>
+   </tr>      
+  <tr><td>status:</td><td><input type="text" class="inputs" placeholder="status" id="" /></td></tr>
+  <tr>
+<td>comments</td><td><textarea id="words" rows="10" cols="20"  class="rr"></textarea>
+
+<input type="button" onclick="getwords()" value="Enter" /> <br></td></tr></table> </center>
+<div><center><p id="para"></p> </center></div>
+</form>
+
+
+</body>
+</html>
+

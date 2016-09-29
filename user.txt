@@ -1,0 +1,50 @@
+adduser:   http://localhost:8080/smartBook/user?operation=1&Name=saranya&dob=04-09-1991&userName=ess&pass=1812&type=employee
+out:{"status":1,"Name":"saranya"}
+
+
+update:http://localhost:8080/smartBook/user?operation=2&userName=ess&Name=ess&type=employee
+out:{"status":1}
+
+getone:http://localhost:8080/smartBook/user?operation=3&userName=ess
+out:{"userName":"ess","type":"employee","userId":18,"status":1,"Name":"ess"}
+
+
+getAll:http://localhost:8080/smartBook/user?operation=4
+
+out:[{"userName":"kiruthika","type":"admin","userId":5,"Name":"valkumar"},
+{"userName":"saravanan","type":"admin","userId":6,"Name":"venkatkumar"},
+{"userName":"saravanan","type":"employee","userId":7,"Name":"selvi"},
+{"userName":"mass","type":"null","userId":8,"Name":"mass"},
+{"userName":"mass","type":"null","userId":9,"Name":"mass"},
+{"userName":"ff","type":"null","userId":10,"Name":"wass"},
+{"userName":"ff","type":"admin","userId":11,"Name":"wass"},
+{"userName":"ljlkj","type":"null","userId":12,"Name":"satish"},
+{"userName":"mmmm","type":"emp","userId":13,"Name":"lasss"},
+{"userName":"valmur","type":"employee","userId":14,"Name":"ddhhdhd"},
+{"userName":"kumar","type":"employee","userId":15,"Name":"kumarprs"},{"userName":"oiss","type":"admin","userId":16,"Name":"qqq"},{"userName":"orss","type":"employee","userId":17,"Name":"djdjdjjd"},
+{"userName":"ess","type":"employee","userId":18,"Name":"ess"}]
+
+employee/admin  :http://localhost:8080/smartBook/user?operation=5&type=employee
+ 
+out:[{"userName":"saravanan","type":"employee","userId":7,"Name":"selvi"},
+        {"userName":"valmur","type":"employee","userId":14,"Name":"ddhhdhd"},
+        {"userName":"kumar","type":"employee","userId":15,"Name":"kumarprs"},
+        {"userName":"orss","type":"employee","userId":17,"Name":"djdjdjjd"},
+        {"userName":"ess","type":"employee","userId":18,"Name":"ess"}]
+
+forget passworrd :http://localhost:8080/smartBook/user?operation=6&userName=orss&pass=9898
+
+out:{"userName":"orss","status":"welcome to Employees"}
+
+login  :http://localhost:8080/smartBook/user?operation=7&userName=orss&pass=9898
+
+out: {"userName":"orss","type":"employee"}
+
+out failed:[ ]
+
+delete one user:http://localhost:8080/smartBook/user?operation=8&userName=orss
+
+out:{"status":"success Deleted"}
+
+delete admin/emloyee :http://localhost:8080/smartBook/user?operation=9&type=admin
+out:  {"status":"success Deleted"} 

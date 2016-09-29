@@ -1,0 +1,94 @@
+<html>
+<head>
+<script src="js/jquery-1.12.3.js"></script>
+        <script src="js/get1.js" type="text/javascript"></script>
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border:3px solid;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #607d8b;
+    color: white;
+}
+h1
+{
+	color: black;
+	font-family: sans-serif;
+	text-shadow: 2px 2px;
+}
+
+#header
+{
+	background-color: blue;
+	text-align: center;
+	font-style: italic;
+}
+body
+{
+	background-color: lightgray;
+}
+.inputs
+{
+ padding: 1px 20px;
+    border: 0;
+    height: 25px;
+    width: 235px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 0 0 #FFF, 5px 5px 40px 2px #BBB inset;
+    outline: 0;
+}
+
+	button{
+    background-color: white;
+    color:black;
+    border: 2px solid #4CAf50;
+    padding:10px 40px;
+  }
+
+#d{
+padding: 90px 10px;
+
+}
+
+
+</style>
+</head>
+<body>
+<div id="header">
+<h1>employee </h1>
+</div>
+<center>
+<div id="d">
+username:<input type="text" id="userName" style="width: 120px; height:35px"/><button id="getuser">submit</button></div>
+</center>
+<table>
+
+<tr>
+<th>userName</th> 
+ <th>type</th>
+  <th>userId</th>
+   <th>name</th> 
+</tr>
+<tr>
+ <td>
+  <input id="userName" class="inputs" readonly="true"></input></td>
+  <td>
+  <input id="type" class="inputs" readonly="true"></input></td> 
+  <td>
+  <input id="userId" class="inputs" readonly="true"></input></td>
+  <td><input id="Name" class="inputs" readonly="true"></input></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

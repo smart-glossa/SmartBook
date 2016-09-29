@@ -1,0 +1,39 @@
+addproject :  http://localhost:8080/smartBook/project?operation=1&ptitle=list%20of%20project&dis=namsjjdjddjd&date=10-13-2203&status=complated
+
+out:{"Status":1,"ptitle":"list of project"}
+
+update :http://localhost:8080/smartBook/project?operation=2&projectId=11&ptitle=list%20of%20project&dis=balanced%20&date=10-13-2203&status=complated
+
+out:{"Status":"updated"}
+
+getone  :  http://localhost:8080/smartBook/project?operation=3&projectId=11
+
+out  : {"pdate":"10-13-2203","ptitle":"list of project","projectId":11,"status":"complated","dis":"balanced "}
+
+getAll  :http://localhost:8080/smartBook/project?operation=4
+
+out:[{"Status":1,"pdate":"21-04-2017","ptitle":"eeeeeeeeeeeeeeeee","projectId":3,"dis":"ccccccccccccccccccccc","status":"kbjkbjsbjklk"},
+                                 {"Status":1,"pdate":"12-33-1434","ptitle":"null","projectId":8,"dis":"wjwjwjscdcsc","status":"wwqqqw"},
+                                 {"Status":1,"pdate":"12-33-1434","ptitle":"bbdcsdc","projectId":9,"dis":"wjwjwjscdcsc","status":"wwqqqw"},
+                                 {"Status":1,"pdate":"13-53-2003","ptitle":"nsnsn","projectId":10,"dis":"qwqwqwq","status":"wewew"},
+                                 {"Status":1,"pdate":"10-13-2203","ptitle":"list of project","projectId":11,"dis":"balanced ","status":"complated"}]
+
+get Only Project  :http://localhost:8080/smartBook/project?operation=5
+
+out:[{"Status":1,"ptitle":"eeeeeeeeeeeeeeeee"},
+        {"Status":1,"ptitle":"kgrjjkjhgkhegkj"},
+         {"Status":1,"ptitle":"vvvvvv"},
+         {"Status":1,"ptitle":"vvvvvv"},
+         {"Status":1,"ptitle":"null"},
+         {"Status":1,"ptitle":"null"},
+         {"Status":1,"ptitle":"bbdcsdc"},
+         {"Status":1,"ptitle":"nsnsn"},
+         {"Status":1,"ptitle":"list of project"}]
+
+delete  :http://localhost:8080/smartBook/project?operation=6&projectId=2
+
+out:{"status":1}
+
+deletestatus: http://localhost:8080/smartBook/project?operation=7&projectId=5&status=lkvjlkjvljlsv
+
+out :{"status":"success updated"}
