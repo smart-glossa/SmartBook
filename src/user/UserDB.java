@@ -10,7 +10,7 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import common.MySqlconstants;
+import common.MySqlConstant;
 
 public class UserDB {
     public static UserDB getObject() {
@@ -18,7 +18,7 @@ public class UserDB {
     }
 
     public void addUser(UserVO user) throws ClassNotFoundException, SQLException {
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Insert into user(Name, dob,userName, pass, type) Values ('" + user.getName() + "','"
                 + user.getDateOfBirth() + "','" + user.getUserName() + "','" + user.getPassword() + "','"
                 + user.gettype() + "')";
@@ -27,7 +27,7 @@ public class UserDB {
     }
 
     public void updateUser(String Name, String type, String userName) throws ClassNotFoundException, SQLException {
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Update user set  Name='" + Name + "',type='" + type + "' where userName = '" + userName + "' ";
         statement.execute(query);
     }
@@ -35,7 +35,7 @@ public class UserDB {
     public UserVO getUser(String userName) throws ClassNotFoundException, SQLException {
 
         UserVO user = new UserVO();
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Select * from user where userName ='" + userName + "'";
         ResultSet rs = statement.executeQuery(query);
         if (rs.next()) {
@@ -50,7 +50,7 @@ public class UserDB {
     public List<UserVO> getusers()
             throws ClassNotFoundException, SQLException, NullPointerException, NumberFormatException, ParseException {
         List<UserVO> user = new ArrayList<>();
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Select userId,Name,userName,type from user";
         ResultSet rs = statement.executeQuery(query);
         while (rs.next()) {
@@ -67,7 +67,7 @@ public class UserDB {
     public List<UserVO> getAdmin(String type)
             throws ClassNotFoundException, SQLException, NullPointerException, NumberFormatException, ParseException {
         List<UserVO> user = new ArrayList<>();
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Select * from user where type='" + type + "'";
         ResultSet rs = statement.executeQuery(query);
         while (rs.next()) {
@@ -85,7 +85,7 @@ public class UserDB {
     public List<UserVO> getlogin(String userName, String pass) throws ClassNotFoundException, SQLException,
             NullPointerException, NumberFormatException, ParseException, JSONException {
         List<UserVO> user = new ArrayList<>();
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Select userName,type from user where userName='" + userName + "' AND pass='" + pass + "'";
         ResultSet rs = statement.executeQuery(query);
         if (rs.next()) {
@@ -106,20 +106,20 @@ public class UserDB {
 
     public void forgetuser(UserVO user) throws SQLException, ClassNotFoundException // forget password
     {
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query =
                 "update user set pass='" + user.getPassword() + "' where userName= '" + user.getUserName() + "' ";
         statement.execute(query);
     }
 
     public void deleteUser(String userName) throws ClassNotFoundException, SQLException {
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Delete from user where userName =' " + userName + "'";
         statement.execute(query);
     }
 
     public void deleteAdmin(String type) throws ClassNotFoundException, SQLException {
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Delete from user where type =' " + type + "'";
         statement.execute(query);
     }
@@ -127,7 +127,7 @@ public class UserDB {
     public UserVO total(String type) throws ClassNotFoundException, SQLException {
 
         UserVO log = new UserVO();
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "SELECT userId FROM user WHERE userId LIKE '%0'";
         ResultSet rs = statement.executeQuery(query);
         if (rs.next()) {

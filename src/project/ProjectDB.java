@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.json.JSONException;
 
-import common.MySqlconstants;
+import common.MySqlConstant;
 
 public class ProjectDB {
     
@@ -20,7 +20,7 @@ public class ProjectDB {
     public void createproject(ProjectVO project)
             throws ClassNotFoundException, SQLException, ParseException, NumberFormatException // add function
     {
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "insert into project(ptitle,dis,pdate,status)values('" + project.getptitle() + "','"
                 + project.getdis() + "','" + project.getdate() + "','" + project.getstatus() + "')";
         statement.executeUpdate(query);
@@ -29,7 +29,7 @@ public class ProjectDB {
     public void updateproject(ProjectVO project, String ptitle)
             throws ClassNotFoundException, SQLException, NumberFormatException, ParseException // update function
     {
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "update project set ptitle='" + project.getptitle() + "',dis='" + project.getdis() + "',pdate='"
                 + project.getdate() + "',status='" + project.getstatus() + "' where projectId="
                 + project.getprojectId();
@@ -40,7 +40,7 @@ public class ProjectDB {
     public ProjectVO getone(int projectId) throws ClassNotFoundException, SQLException, JSONException, ParseException {
 
         ProjectVO project = new ProjectVO();
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "select * from project where projectId= '" + projectId + "' ";
         ResultSet rs = statement.executeQuery(query);
         if (rs.next()) {
@@ -56,7 +56,7 @@ public class ProjectDB {
 
     public List<ProjectVO> getproject() throws ClassNotFoundException, SQLException, JSONException, ParseException {
         List<ProjectVO> tlist = new ArrayList<>();
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "select * from project";
         ResultSet rs = statement.executeQuery(query);
         while (rs.next()) {
@@ -74,7 +74,7 @@ public class ProjectDB {
 
     public List<ProjectVO> getOnlyproject() throws ClassNotFoundException, SQLException, JSONException, ParseException {
         List<ProjectVO> tlist = new ArrayList<>();
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "select projectId,ptitle from project";
         ResultSet rs = statement.executeQuery(query);
         while (rs.next()) {
@@ -90,13 +90,13 @@ public class ProjectDB {
     }
 
     public void delete(int projectId) throws ClassNotFoundException, SQLException {
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "delete  from project where projectId=" + projectId;
         statement.execute(query);
     }
 
     public void deletestatus(int projectId) throws ClassNotFoundException, SQLException {
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "delete status from project where=" + projectId;
         statement.execute(query);
     }
@@ -104,7 +104,7 @@ public class ProjectDB {
     public void updatestatus(ProjectVO project, int projectId, String status)
             throws ClassNotFoundException, SQLException, NumberFormatException, ParseException // update function
     {
-        Statement statement = MySqlconstants.getInstance().getCreatedStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query =
                 "update project set status='" + project.getstatus() + "' where projectId=" + project.getprojectId();
         statement.execute(query);

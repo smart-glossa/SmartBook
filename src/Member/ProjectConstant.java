@@ -1,6 +1,6 @@
 package Member;
 
-public class Projectconstants {
+public class ProjectConstant {
 
     public static final int ADDOPERATION = 1;
     public static final int UPDATEOPERATION = 2;

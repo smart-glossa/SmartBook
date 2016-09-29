@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class ProjectMemberServlets extends HttpServlet {
+public class ProjectMemberServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -25,16 +25,16 @@ public class ProjectMemberServlets extends HttpServlet {
         int operation = Integer.parseInt(request.getParameter("operation"));
         try {
             switch (operation) {
-            case Projectconstants.ADDOPERATION:
+            case ProjectConstant.ADDOPERATION:
                 AddMember(request, response);
                 break;
-            case Projectconstants.UPDATEOPERATION:
+            case ProjectConstant.UPDATEOPERATION:
                 updatemember(request, response);
                 break;
-            case Projectconstants.GETOPERATION:
+            case ProjectConstant.GETOPERATION:
                 getmember(request, response);
                 break;
-            case Projectconstants.GETALLOPERATION:
+            case ProjectConstant.GETALLOPERATION:
                 getall(request, response);
                 break;
             }
