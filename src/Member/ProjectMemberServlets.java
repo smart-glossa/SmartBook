@@ -20,13 +20,13 @@ import org.json.JSONObject;
  * Servlet implementation class projectMemberServlets
  */
 @WebServlet("/projectMemberServlets")
-public class projectMemberServlets extends HttpServlet {
+public class ProjectMemberServlets extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public projectMemberServlets() {
+    public ProjectMemberServlets() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -45,16 +45,16 @@ public class projectMemberServlets extends HttpServlet {
      try 
      {
      switch (operation) {
-	case projectconstants.req_AddOperation:
+	case Projectconstants.req_AddOperation:
 			AddMember(request,response);
 			break;
-	case projectconstants.req_UpdateOperation:
+	case Projectconstants.req_UpdateOperation:
 		updatemember(request,response);
 		break;
-	case projectconstants.req_GetOperation:
+	case Projectconstants.req_GetOperation:
 		getmember(request,response);
 		break;
-	case projectconstants.req_GetAll:
+	case Projectconstants.req_GetAll:
 		getall(request,response);
 		break;
      }
@@ -75,7 +75,7 @@ public class projectMemberServlets extends HttpServlet {
 		//int RoleId=Integer.parseInt(request.getParameter("RoleId"));
 		try
 		{
-			projectMemberVO member=projectMemberBL.getObject().addProjectMember(projectId,ptitle,userName);
+			ProjectMemberVO member=ProjectMemberBL.getObject().addProjectMember(projectId,ptitle,userName);
 			owner.put("Status","Success");
 		} catch (NumberFormatException e) {
 			owner.put("Status", "0");
@@ -113,7 +113,7 @@ public class projectMemberServlets extends HttpServlet {
       //int RoleId=Integer.parseInt(request.getParameter("RoleId"));
 		try
 		{
-			projectMemberVO upmember=projectMemberBL.getObject().updateProjectMember(projectId, userName, ptitle);
+			ProjectMemberVO upmember=ProjectMemberBL.getObject().updateProjectMember(projectId, userName, ptitle);
 			update.put("Status", "Success Updated");
 		}catch(JSONException e){
 			update.put("Status", 0);
@@ -148,9 +148,9 @@ public class projectMemberServlets extends HttpServlet {
         long projectId = Long.parseLong(request.getParameter("projectId"));
         String userName=request.getParameter("userName");
         try {
-            List<projectMemberVO> members = projectMemberBL.getObject().getProjectMembers(projectId,userName);
+            List<ProjectMemberVO> members = ProjectMemberBL.getObject().getProjectMembers(projectId,userName);
             JSONArray rmembers = new JSONArray();
-            for (projectMemberVO member : members) {
+            for (ProjectMemberVO member : members) {
                 if (member.getProjectId() != -1l) {
                     JSONObject rmember = new JSONObject();
                     rmember.put("projectId", member.getProjectId());
@@ -182,9 +182,9 @@ public class projectMemberServlets extends HttpServlet {
 
 
         try {
-            List<projectMemberVO> members = projectMemberBL.getObject().getProjectMembersAlll();
+            List<ProjectMemberVO> members = ProjectMemberBL.getObject().getProjectMembersAlll();
             JSONArray rmembers = new JSONArray();
-            for (projectMemberVO member : members) {
+            for (ProjectMemberVO member : members) {
                 if (member.getProjectId() != -1l) {
                     JSONObject rmember = new JSONObject();
                     rmember.put("projectId", member.getProjectId());

@@ -12,40 +12,40 @@ import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import comman.MYSQLconstants;
+import comman.MySqlconstants;
 
 
-public class projectDB {
-	public static projectDB getobject()
+public class ProjectDB {
+	public static ProjectDB getobject()
 	 {
-		 return new projectDB();
+		 return new ProjectDB();
 	 }
-	 public void createproject(projectVO project) throws ClassNotFoundException, 
+	 public void createproject(ProjectVO project) throws ClassNotFoundException, 
 	                                  SQLException,ParseException,NumberFormatException  //add function
 	 {
-		 Class.forName(MYSQLconstants.mysqlDriver);
-		 Connection connection=DriverManager.getConnection(MYSQLconstants.mysqlPath + MYSQLconstants.database,MYSQLconstants.userName,MYSQLconstants.password);
+		 Class.forName(MySqlconstants.mysqlDriver);
+		 Connection connection=DriverManager.getConnection(MySqlconstants.mysqlPath + MySqlconstants.database,MySqlconstants.userName,MySqlconstants.password);
 		 Statement statement=connection.createStatement();
 		 String query="insert into project(ptitle,dis,pdate,status)values('"+project.getptitle()+"','"+project.getdis()+"','"+project.getdate()+"','"+project.getstatus()+"')";
 		 statement.executeUpdate(query);
 	 }
-	 public void updateproject(projectVO project,String ptitle) throws ClassNotFoundException, 
+	 public void updateproject(ProjectVO project,String ptitle) throws ClassNotFoundException, 
 	                               SQLException,NumberFormatException,ParseException  //update function
 	 {
-		 Class.forName(MYSQLconstants.mysqlDriver);
-		 Connection connection=DriverManager.getConnection(MYSQLconstants.mysqlPath + MYSQLconstants.database,MYSQLconstants.userName,MYSQLconstants.password);
+		 Class.forName(MySqlconstants.mysqlDriver);
+		 Connection connection=DriverManager.getConnection(MySqlconstants.mysqlPath + MySqlconstants.database,MySqlconstants.userName,MySqlconstants.password);
 		 Statement statement=connection.createStatement();                                        
 		 String query="update project set ptitle='"+project.getptitle()+"',dis='"+project.getdis()+"',pdate='"+project.getdate()+"',status='"+project.getstatus()+"' where projectId=" +project.getprojectId();
 		 statement.execute(query);
 		
 	 }
 	 
-	 public projectVO getone(int projectId) throws ClassNotFoundException, SQLException, JSONException,ParseException
+	 public ProjectVO getone(int projectId) throws ClassNotFoundException, SQLException, JSONException,ParseException
 	 {
 		   
-		 projectVO project=new projectVO();
-		 Class.forName(MYSQLconstants.mysqlDriver);
-		 Connection connection=DriverManager.getConnection(MYSQLconstants.mysqlPath + MYSQLconstants.database,MYSQLconstants.userName,MYSQLconstants.password);
+		 ProjectVO project=new ProjectVO();
+		 Class.forName(MySqlconstants.mysqlDriver);
+		 Connection connection=DriverManager.getConnection(MySqlconstants.mysqlPath + MySqlconstants.database,MySqlconstants.userName,MySqlconstants.password);
 		 Statement statement=connection.createStatement();
 		 String query="select * from project where projectId= '"+ projectId+"' ";
 		 ResultSet rs=statement.executeQuery(query);
@@ -61,17 +61,17 @@ public class projectDB {
 		 }
 		return project;
 	 }
-	 public List<projectVO> getproject() throws ClassNotFoundException, SQLException, JSONException,ParseException
+	 public List<ProjectVO> getproject() throws ClassNotFoundException, SQLException, JSONException,ParseException
 	 {
-		 List<projectVO> tlist=new ArrayList<>(); // Hi Sathish, tlist
-		 Class.forName(MYSQLconstants.mysqlDriver);
-		 Connection connection=DriverManager.getConnection(MYSQLconstants.mysqlPath + MYSQLconstants.database,MYSQLconstants.userName,MYSQLconstants.password);
+		 List<ProjectVO> tlist=new ArrayList<>(); // Hi Sathish, tlist
+		 Class.forName(MySqlconstants.mysqlDriver);
+		 Connection connection=DriverManager.getConnection(MySqlconstants.mysqlPath + MySqlconstants.database,MySqlconstants.userName,MySqlconstants.password);
 		 Statement statement=connection.createStatement();
 		 String query="select * from project";
 		 ResultSet rs=statement.executeQuery(query);
 		 while(rs.next())
 		 {
-			projectVO getss=new projectVO();
+			ProjectVO getss=new ProjectVO();
 			getss.setprojectId(rs.getInt("projectId"));
 			getss.setptitle(rs.getString("ptitle"));
 			getss.setdes( rs.getString("dis"));
@@ -86,17 +86,17 @@ public class projectDB {
 	 }
 	 
 	 
-	 public List<projectVO> getOnlyproject() throws ClassNotFoundException, SQLException, JSONException,ParseException
+	 public List<ProjectVO> getOnlyproject() throws ClassNotFoundException, SQLException, JSONException,ParseException
 	 {
-		 List<projectVO> tlist=new ArrayList<>(); // Hi Sathish, tlist
-		 Class.forName(MYSQLconstants.mysqlDriver);
-		 Connection connection=DriverManager.getConnection(MYSQLconstants.mysqlPath + MYSQLconstants.database,MYSQLconstants.userName,MYSQLconstants.password);
+		 List<ProjectVO> tlist=new ArrayList<>(); // Hi Sathish, tlist
+		 Class.forName(MySqlconstants.mysqlDriver);
+		 Connection connection=DriverManager.getConnection(MySqlconstants.mysqlPath + MySqlconstants.database,MySqlconstants.userName,MySqlconstants.password);
 		 Statement statement=connection.createStatement();
 		 String query="select projectId,ptitle from project";
 		 ResultSet rs=statement.executeQuery(query);
 		 while(rs.next())
 		 {
-			projectVO getss=new projectVO();
+			ProjectVO getss=new ProjectVO();
 			getss.setprojectId(rs.getInt("projectId"));
 			getss.setptitle(rs.getString("ptitle"));
 
@@ -111,8 +111,8 @@ public class projectDB {
 	 {
 		 JSONObject del=new JSONObject();
 		// projectGS dele=new projectGS();
-		 Class.forName(MYSQLconstants.mysqlDriver);
-		 Connection connection=DriverManager.getConnection(MYSQLconstants.mysqlPath + MYSQLconstants.database,MYSQLconstants.userName,MYSQLconstants.password);
+		 Class.forName(MySqlconstants.mysqlDriver);
+		 Connection connection=DriverManager.getConnection(MySqlconstants.mysqlPath + MySqlconstants.database,MySqlconstants.userName,MySqlconstants.password);
 		 Statement statement=connection.createStatement();
 		 String query="delete  from project where projectId="+projectId;
 		 statement.execute(query);
@@ -120,17 +120,17 @@ public class projectDB {
 	 public void deletestatus(int projectId) throws ClassNotFoundException, SQLException
 	 {
 		 JSONObject del=new JSONObject();
-		 Class.forName(MYSQLconstants.mysqlDriver);
-		 Connection connection=DriverManager.getConnection(MYSQLconstants.mysqlPath + MYSQLconstants.database,MYSQLconstants.userName,MYSQLconstants.password);
+		 Class.forName(MySqlconstants.mysqlDriver);
+		 Connection connection=DriverManager.getConnection(MySqlconstants.mysqlPath + MySqlconstants.database,MySqlconstants.userName,MySqlconstants.password);
 		 Statement statement=connection.createStatement();
 		 String query="delete status from project where="+ projectId;
 		 statement.execute(query);
 	 }
-	 public void updatestatus(projectVO project,int projectId,String status) throws ClassNotFoundException, 
+	 public void updatestatus(ProjectVO project,int projectId,String status) throws ClassNotFoundException, 
      SQLException,NumberFormatException,ParseException  //update function
     {
-      Class.forName(MYSQLconstants.mysqlDriver);
-      Connection connection=DriverManager.getConnection(MYSQLconstants.mysqlPath + MYSQLconstants.database,MYSQLconstants.userName,MYSQLconstants.password);
+      Class.forName(MySqlconstants.mysqlDriver);
+      Connection connection=DriverManager.getConnection(MySqlconstants.mysqlPath + MySqlconstants.database,MySqlconstants.userName,MySqlconstants.password);
       Statement statement=connection.createStatement();                                        
       String query="update project set status='"+project.getstatus()+"' where projectId=" +project.getprojectId();
       statement.execute(query);

@@ -23,14 +23,14 @@ import org.json.JSONObject;
  * Servlet implementation class projectServlet
  */
 @WebServlet("/projectServlet")
-public class projectServlet extends HttpServlet {
+public class ProjectServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public projectServlet() {
+    public ProjectServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -51,25 +51,25 @@ public class projectServlet extends HttpServlet {
 		int operation=Integer.parseInt(request.getParameter("operation"));
 		try {
 			switch (operation) {
-			case projectconstant.req_CreateMode:
+			case ProjectConstant.req_CreateMode:
 				addproject(request,response);
 				break;
-			case projectconstant.req_UpdateMode:
+			case ProjectConstant.req_UpdateMode:
 				updateproject(request,response);
 				break;
-			case projectconstant.req_GetMode:
+			case ProjectConstant.req_GetMode:
 				getprojecct(request,response);
 				break;
-			case projectconstant.req_getAllProject:
+			case ProjectConstant.req_getAllProject:
 				getallProject(request,response);
 				break;
-			case projectconstant.req_getonlyMode:
+			case ProjectConstant.req_getonlyMode:
 				getOnly(request,response);
 				break;
-			case projectconstant.req_DeleteOneMode:
+			case ProjectConstant.req_DeleteOneMode:
 				deleteOne(request,response);
 				break;
-			case projectconstant.req_deletestatusMode:
+			case ProjectConstant.req_deletestatusMode:
 				deletestatus(request,response);
 				break;
 			/*case projectconstant.req_geturl:
@@ -97,7 +97,7 @@ public class projectServlet extends HttpServlet {
 		//String url=request.getParameter("url");
 		try
 		{
-			projectVO p=projectBL.getobject().createproject(ptitle, dis, date, status);
+			ProjectVO p=ProjectBL.getobject().createproject(ptitle, dis, date, status);
 			project.put("Status",1);
 			project.put("ptitle",p.getptitle());
 			//project.put("projectId",p.getprojectId());
@@ -128,7 +128,7 @@ public class projectServlet extends HttpServlet {
 		String status=request.getParameter("status");
 		try
 		{
-			projectVO up=projectBL.getobject().updateproject(projectId, ptitle, dis, date, status);
+			ProjectVO up=ProjectBL.getobject().updateproject(projectId, ptitle, dis, date, status);
 			update.put("Status", "updated");
 		}catch(ClassNotFoundException e){
 			update.put("Status", 0);
@@ -161,7 +161,7 @@ public class projectServlet extends HttpServlet {
 		
 		try
 		{
-			projectVO gone=projectDB.getobject().getone(projectId);
+			ProjectVO gone=ProjectDB.getobject().getone(projectId);
 			get.put("status", 1);
 			if(gone.getprojectId()!=-1l)
 			{
@@ -204,9 +204,9 @@ public class projectServlet extends HttpServlet {
 		try
 		{
 			
-			List<projectVO> gets=projectBL.getobject().getproject();
+			List<ProjectVO> gets=ProjectBL.getobject().getproject();
 			//JSONArray plist=new JSONArray();
-			for(projectVO gs:gets)
+			for(ProjectVO gs:gets)
 			{
 			if(gs.getprojectId()!=-1l)
 			{
@@ -254,10 +254,10 @@ public class projectServlet extends HttpServlet {
 		try
 		{
 			
-			List<projectVO> gets=projectBL.getobject().getOnlyproject();
+			List<ProjectVO> gets=ProjectBL.getobject().getOnlyproject();
 			//JSONArray plist=new JSONArray();
 		
-			for(projectVO gs:gets)
+			for(ProjectVO gs:gets)
 			{
 			if(gs.getprojectId()!=-1l)
 			{
@@ -302,7 +302,7 @@ public class projectServlet extends HttpServlet {
 		JSONObject result = new JSONObject();
         int projectId = Integer.parseInt(request.getParameter("projectId"));
         try {
-            projectBL.getobject().deleteproject(projectId);
+            ProjectBL.getobject().deleteproject(projectId);
             result.put("status", "success deleted");
         } catch (ClassNotFoundException e) {
             result.put("status", 0);
@@ -333,7 +333,7 @@ public class projectServlet extends HttpServlet {
         String status=request.getParameter("status");
        
         try {
-            projectBL.getobject().updatestatus(projectId, status);
+            ProjectBL.getobject().updatestatus(projectId, status);
             result.put("status", "success updated");
         } catch (ClassNotFoundException e) {
             result.put("status", 0);

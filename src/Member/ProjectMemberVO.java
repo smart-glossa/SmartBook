@@ -1,7 +1,7 @@
 package Member;
 
 
-public class projectMemberVO {
+public class ProjectMemberVO {
 
 	
 
@@ -13,14 +13,14 @@ public class projectMemberVO {
     public long getProjectId() {
         return projectId;
     }
-    public projectMemberVO setProjectId(long projectId) {
+    public ProjectMemberVO setProjectId(long projectId) {
         this.projectId = projectId;
         return this;
     }
     public String getUserName() {
         return userName;
     }
-    public projectMemberVO setUserName(String userName) {
+    public ProjectMemberVO setUserName(String userName) {
         this.userName = userName;
         return this;
     }
@@ -28,7 +28,7 @@ public class projectMemberVO {
     {
     	return ptitle;
     }
-    public projectMemberVO setptitle(String ptitle)
+    public ProjectMemberVO setptitle(String ptitle)
     {
     	this.ptitle=ptitle;
     	return this;
@@ -36,7 +36,7 @@ public class projectMemberVO {
     public int getProjectRoleId() {
         return projectRoleId;
     }
-    public projectMemberVO setProjectRoleId(int projectRoleId) {
+    public ProjectMemberVO setProjectRoleId(int projectRoleId) {
         this.projectRoleId = projectRoleId;
         return this;
     }

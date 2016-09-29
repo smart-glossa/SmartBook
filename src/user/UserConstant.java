@@ -1,6 +1,6 @@
 package user;
 
-public class userconstant {
+public class UserConstant {
 
 	public static final int req_RegisterMode = 1;
 	public static final int req_UpdateMode = 2;

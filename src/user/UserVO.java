@@ -1,7 +1,7 @@
 package user;
 
 
-public class userVO {
+public class UserVO {
 	int userId;
     String Name;
     String DateOfBirth;
@@ -12,14 +12,14 @@ public class userVO {
     public int getuserId() {
 	       return userId;
 	    }
-	    public userVO setuserId(int userId) {
+	    public UserVO setuserId(int userId) {
 	      this.userId = userId;
 	       return this;
 	   }
 	    public String getName() {
 	        return Name;
 	    }
-	    public userVO setName(String Name) {
+	    public UserVO setName(String Name) {
 	        this.Name = Name;
 	        return this;
 	    }
@@ -27,35 +27,35 @@ public class userVO {
 	    public String getDateOfBirth() {
 	        return DateOfBirth;
 	    }
-	    public userVO setDateOfBirth(String DateOfBirth) {
+	    public UserVO setDateOfBirth(String DateOfBirth) {
 	        this.DateOfBirth = DateOfBirth;
 	        return this;
 	    }
 	    public String getUserName() {
 	        return userName;
 	    }
-	    public userVO setUserName(String userName) {
+	    public UserVO setUserName(String userName) {
 	        this.userName = userName;
 	        return this;
 	    }
 	    public String getPassword() {
 	        return password;
 	    }
-	    public userVO setPassword(String password) {
+	    public UserVO setPassword(String password) {
 	        this.password = password;  
 	        return this;
 	    }
 	    public int getimageId() {
 	        return imageId;
 	    }
-	    public userVO setimageId(int imageId) {
+	    public UserVO setimageId(int imageId) {
 	        this.imageId = imageId;
 	        return this;
 	    }
 	    public String gettype() {
 	        return type;
 	    }
-	    public userVO settype(String type) {
+	    public UserVO settype(String type) {
 	        this.type = type;
 	        return this;
 	    }

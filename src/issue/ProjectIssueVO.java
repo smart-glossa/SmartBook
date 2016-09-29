@@ -1,6 +1,6 @@
 package issue;
 
-public class projectIssueVO {
+public class ProjectIssueVO {
 
 	long issueId ;
 	int projectId;
@@ -13,7 +13,7 @@ public class projectIssueVO {
 	{
 		return issueId;
 	}
-	public projectIssueVO setIssueId(long issueId)
+	public ProjectIssueVO setIssueId(long issueId)
 	{
 		this.issueId=issueId;
 		return this;
@@ -22,7 +22,7 @@ public class projectIssueVO {
 	{
 		return projectId;
 	}
-	public projectIssueVO setdiscription( String dis)
+	public ProjectIssueVO setdiscription( String dis)
 	{
 		this.discription=dis;
 		return this;
@@ -31,7 +31,7 @@ public class projectIssueVO {
 	{
 		return userId;
 	}
-	public projectIssueVO setuserId(int userId)
+	public ProjectIssueVO setuserId(int userId)
 	{
 		this.userId=userId;
 		return this;
@@ -40,7 +40,7 @@ public class projectIssueVO {
 	{
 		return findtime;
 	}
-	public projectIssueVO setfindtime(long findtime)
+	public ProjectIssueVO setfindtime(long findtime)
 	{
 		this.findtime=findtime;
 		return this;
@@ -49,7 +49,7 @@ public class projectIssueVO {
 	{
 		return fixedtime;
 	}
-	public projectIssueVO setfixedtime(long fixedtime)
+	public ProjectIssueVO setfixedtime(long fixedtime)
 	{
 		
 		

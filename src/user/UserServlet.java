@@ -26,14 +26,14 @@ import org.json.JSONObject;
  * Servlet implementation class userServlet
  */
 @WebServlet("/userServlet")
-public class userServlet extends HttpServlet {
+public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
 
     /**
      * Default constructor. 
      */
-    public userServlet() {
+    public UserServlet() {
         // TODO Auto-generated constructor stub
     }
 
@@ -53,31 +53,31 @@ public class userServlet extends HttpServlet {
 		int operation=Integer.parseInt(request.getParameter("operation"));
 		try {
 			switch (operation) {
-			case userconstant.req_RegisterMode:
+			case UserConstant.req_RegisterMode:
 				adduser(request,response);
 				break;
-			case  userconstant.req_UpdateMode:
+			case  UserConstant.req_UpdateMode:
 				updateuser(request,response);
 				break;
-			case userconstant.req_getMode:
+			case UserConstant.req_getMode:
 				getuser(request,response);
 				break;
-			case userconstant.req_getAllMode:
+			case UserConstant.req_getAllMode:
 				getAlluser(request,response);
 				break;
-			case userconstant.req_getAdminMode:
+			case UserConstant.req_getAdminMode:
 				getAdmin(request,response);
 				break;
-			case userconstant.req_getforgetMode:
+			case UserConstant.req_getforgetMode:
 				userforget(request,response);
 				break;
-			case userconstant.req_delete:
+			case UserConstant.req_delete:
 				delete(request,response);
 				break;
-			case userconstant.req_deleteAdmin:
+			case UserConstant.req_deleteAdmin:
 				deleteAdmin(request,response);
                 break;
-			case userconstant.req_getlogin:
+			case UserConstant.req_getlogin:
 				getlogin(request,response);
                 break;
 			}
@@ -100,7 +100,7 @@ public class userServlet extends HttpServlet {
 	        String type = request.getParameter("type");
 	        try 
 	        {
-	           userVO user = userBL.getObject().addUser(Name, dateOfBirth,userName, password,type);
+	           UserVO user = UserBL.getObject().addUser(Name, dateOfBirth,userName, password,type);
 	            result.put("status", 1);
 	           // result.put("userId", user.getuserId());
 	            result.put("Name",user.getName());
@@ -128,7 +128,7 @@ private void updateuser(HttpServletRequest request, HttpServletResponse response
      String userName = request.getParameter("userName"); 
      String type=request.getParameter("type");
      try {
-         userBL.getObject().updateUser(Name,userName,type);
+         UserBL.getObject().updateUser(Name,userName,type);
          result.put("status", 1);
      } catch (ClassNotFoundException e) {
          result.put("status", 0);
@@ -155,7 +155,7 @@ private void getuser(HttpServletRequest request, HttpServletResponse response) t
       
         String userName=request.getParameter("userName");
         try {
-            userVO user = userBL.getObject().getUser(userName);
+            UserVO user = UserBL.getObject().getUser(userName);
             result.put("status", 1);
             if (user.getuserId() != -1l) {
                 result.put("userId", user.getuserId());
@@ -188,8 +188,8 @@ private void getAlluser(HttpServletRequest request, HttpServletResponse response
 	
 	try
 	{
-		List<userVO> alluser=userBL.getObject().getusers();
-		for(userVO vo:alluser)
+		List<UserVO> alluser=UserBL.getObject().getusers();
+		for(UserVO vo:alluser)
          {
 			if(vo.getuserId()!=1l)
 			{
@@ -221,8 +221,8 @@ private void getAdmin(HttpServletRequest request, HttpServletResponse response) 
 	
 	try
 	{
-		List<userVO> alluser=userBL.getObject().getAdmin(type);
-		for(userVO vo:alluser)
+		List<UserVO> alluser=UserBL.getObject().getAdmin(type);
+		for(UserVO vo:alluser)
          {
 			if(vo.getuserId()!=1l)
 			{
@@ -256,9 +256,9 @@ private void getlogin(HttpServletRequest request, HttpServletResponse response) 
 	
 	try
 	{
-		List<userVO> alluser=userBL.getObject().getlogin(userName, pass);
+		List<UserVO> alluser=UserBL.getObject().getlogin(userName, pass);
 		JSONObject get=new JSONObject();
-		for(userVO vo:alluser)
+		for(UserVO vo:alluser)
          {
 			if(vo.getuserId()!=1l)
 			{
@@ -293,7 +293,7 @@ private void userforget(HttpServletRequest request, HttpServletResponse response
     String userName = request.getParameter("userName");
     String password = request.getParameter("pass"); 
     try {
-        userVO user=userBL.getObject().forget(userName, password);
+        UserVO user=UserBL.getObject().forget(userName, password);
         result.put("status","welcome to Employees");
         result.put("userName",user.getUserName());
     } catch (ClassNotFoundException e) {
@@ -322,7 +322,7 @@ private void delete(HttpServletRequest request, HttpServletResponse response) th
 	 JSONObject result = new JSONObject();
      String userName =request.getParameter("userName");
      try {
-         userBL.getObject().deleteUser(userName);
+         UserBL.getObject().deleteUser(userName);
          result.put("status", "success Deleted");
      } catch (ClassNotFoundException e) {
          result.put("status", 0);
@@ -349,7 +349,7 @@ private void deleteAdmin(HttpServletRequest request, HttpServletResponse respons
 	 JSONObject result = new JSONObject();
      String type =request.getParameter("type");
      try {
-         userBL.getObject().deleteAdmin(type);
+         UserBL.getObject().deleteAdmin(type);
          result.put("status", "success Deleted");
      } catch (ClassNotFoundException e) {
          result.put("status", 0);

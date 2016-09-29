@@ -1,7 +1,7 @@
 package project;
 
 
-public class projectVO {
+public class ProjectVO {
 
 	int projectId;
 	String ptitle;
@@ -15,7 +15,7 @@ public class projectVO {
 		return projectId;
 		
 	}
-	public projectVO setprojectId(int projectId)
+	public ProjectVO setprojectId(int projectId)
 	{
 		this.projectId=projectId;
 		return this;
@@ -24,7 +24,7 @@ public class projectVO {
 	{
 		return ptitle;
 	}
-	public projectVO setptitle(String ptitle)
+	public ProjectVO setptitle(String ptitle)
 	{
 		this.ptitle=ptitle;
 		return this;
@@ -33,7 +33,7 @@ public class projectVO {
 	{
 		return dis;
 	}
-	public projectVO setdes(String dis)
+	public ProjectVO setdes(String dis)
 	{
 		this.dis=dis;
 		return this;
@@ -42,7 +42,7 @@ public class projectVO {
 	{
 		return date;
 	}
-	public projectVO setdate(String date)
+	public ProjectVO setdate(String date)
 	{
 		this.date=date;
 		return this;
@@ -51,7 +51,7 @@ public class projectVO {
 	{
 		return status;
 	}
-	public projectVO setstatus(String status)
+	public ProjectVO setstatus(String status)
 	{
 		this.status=status;
 		return this;
