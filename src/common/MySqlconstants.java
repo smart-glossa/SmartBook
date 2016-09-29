@@ -1,4 +1,4 @@
-package comman;
+package common;
 
 public class MySqlconstants {
 	public static String mysqlDriver = "com.mysql.jdbc.Driver";
