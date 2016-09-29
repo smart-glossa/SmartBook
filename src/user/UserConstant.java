@@ -2,16 +2,15 @@ package user;
 
 public class UserConstant {
 
-	public static final int req_RegisterMode = 1;
-	public static final int req_UpdateMode = 2;
-	public static final int req_getMode = 3;
-	public static final int req_getAllMode = 4;
-	public static final int req_getAdminMode = 5;
-	public static final int req_getforgetMode = 6;
-	public static final int req_getlogin = 7;
-	public static final int req_delete=8;
-	public static final int req_deleteAdmin=9;
-	
-	
-	
+    // Always Keep Constant Varaibles in CAPTIAL LETTER - (Style GuideLines)
+    public static final int REGISTERMODE = 1;
+    public static final int UPDATEMODE = 2;
+    public static final int GETMODE = 3;
+    public static final int GETALLMODE = 4;
+    public static final int GETADMINMODE = 5;
+    public static final int FORGOTMODE = 6;
+    public static final int LOGINMODE = 7;
+    public static final int DELETEMODE = 8;
+    public static final int DELETEADMINMODE = 9;
+
 }

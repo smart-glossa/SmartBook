@@ -1,13 +1,11 @@
 package project;
 
 public class ProjectConstant {
-	public static final int req_CreateMode = 1;
-    public static final int req_UpdateMode = 2;
-    public static final int req_GetMode = 3;
-    public static final int req_getAllProject=4;
-    public static final int req_getonlyMode=5;
-    public static final int req_DeleteOneMode=6;
-    public static final int req_deletestatusMode=7;
-    public static final int req_geturl=8;
-
+    public static final int CREATEMODE = 1;
+    public static final int UPDATEMODE = 2;
+    public static final int GETMODE = 3;
+    public static final int GETALLMODE = 4;
+    public static final int GETONE = 5;
+    public static final int DELETEONEMODE = 6;
+    public static final int DELETESTATUSMODE = 7;
 }

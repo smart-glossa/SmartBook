@@ -12,7 +12,7 @@
 
 <servlet>
         <servlet-name>User</servlet-name>
-        <servlet-class>user.userServlet</servlet-class>
+        <servlet-class>user.UserServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -23,7 +23,7 @@
 
 <servlet>
         <servlet-name>Projects</servlet-name>
-        <servlet-class>project.projectServlet</servlet-class>
+        <servlet-class>project.ProjectServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -32,7 +32,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>Member</servlet-name>
-        <servlet-class>Member.projectMemberServlets</servlet-class>
+        <servlet-class>Member.ProjectMemberServlets</servlet-class>
     </servlet>
 
     <servlet-mapping>
