@@ -30,5 +30,14 @@
         <servlet-name>Projects</servlet-name>
         <url-pattern>/project  </url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Member</servlet-name>
+        <servlet-class>Member.projectMemberServlets</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Member</servlet-name>
+        <url-pattern>/member  </url-pattern>
+    </servlet-mapping>
 </web-app>
  
