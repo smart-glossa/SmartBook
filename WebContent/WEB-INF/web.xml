@@ -32,7 +32,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>Member</servlet-name>
-        <servlet-class>Member.ProjectMemberServlets</servlet-class>
+        <servlet-class>member.ProjectMemberServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
