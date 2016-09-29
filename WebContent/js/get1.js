@@ -1,5 +1,5 @@
 /*
-Proper formatting is what makes the good readable. Indent your code.
+Proper formatting is what makes the code readable. Indent your code.
 Just follow some good style guides. One of which is https://google.github.io/styleguide/javascriptguide.xml
 
 Make sure your team follows the same. So that it will be like one man typed code. No matter who types it will look the same
