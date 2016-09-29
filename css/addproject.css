@@ -1,0 +1,160 @@
+body
+{
+	background-color: #f5f5f5;
+}
+.head
+{
+	background-color: #2962ff;
+}
+ul {
+    list-style-type: none;     
+    overflow: hidden;    
+}
+
+li {
+    float: left;
+     padding-top: 10px;
+     display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: bold;
+}
+.p1
+{
+	padding-top: 25px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+
+}
+
+.p
+{
+	float: right;
+	text-align: center;
+	padding-right: 35px;
+	background-color: #757575;
+	
+	font-size: 19px;
+	border: 10px solid #212121;
+	color: white;
+}
+.p:hover
+{
+	background-color: #2962ff;
+}
+p a
+{
+	text-decoration: none;
+	color: white;
+}
+
+/*img
+{
+	border-radius: 50%;
+
+}*/
+table,tr,th
+{
+	
+	margin-left: 180px;
+
+}
+#tex
+{
+	outline: none;
+height: 30px;
+background-color:#424242 ;
+color:white;
+border-top-style: none;
+}
+
+th
+{
+	font-size: 18px;
+	background-color: #2962ff;
+
+}
+.input
+{
+width:220px;
+	height: 50px;
+	border: 0px;
+	background-color: #bdbdbd;
+	outline: none;
+	resize: none;	
+}
+
+/*........end of the add projrct......*/
+
+
+/*start in add project details css*/
+#aa
+{
+	opacity: 0.9;
+	position: relative;
+	
+	background-color: #bdbdbd;
+	width:50%;
+	height: 60%;
+
+	padding-top: 40px;
+}
+input
+{
+	width:220px;
+	height: 50px;
+	border: 0px;
+	background-color: #bdbdbd;
+	outline: none;
+
+}
+
+h3
+{
+	font-weight: bold;
+	font-size: 25px;
+}
+
+button
+{
+	float:right;
+	width: 90px;
+	color: white;
+	height: 40px;
+
+	background-color:#424242;
+	 
+}
+button:hover
+{
+	background-color: #2962ff;
+}
+img{
+	float:right;
+	border-radius: 59px;
+}
+#close
+{
+	float: right;
+}
+/*========*/
+/*z index css......)*/
+table
+{
+	opacity: 0.7;
+	position: absolute;
+	border:1px solid #bdbdbd;
+	}
+	/* table row css call to jquery*/
+	.tablerow
+	{
+width: 70%;
+height: 20%;
+
+	}
+	
+
+
+
+
+	

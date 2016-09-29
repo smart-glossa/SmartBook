@@ -1,0 +1,67 @@
+
+body{
+  background-color: lightgray;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 20px;
+    width: 180px;
+    height: 400px;
+    background-color:  gray;
+}
+
+li a {
+    display: block;
+    color: white;
+    font-family: Algerian;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+
+li a:hover {
+    background-color:#2962ff;
+    color: white;
+    
+}
+h2{
+  background-color: #2962ff;
+  color: white;
+  height: 45px;
+  padding-top:30px; 
+  font-family: Algerian;
+  font-size: 28px;
+
+}
+
+img{
+  float: right;
+  border-radius: 40px;
+  width: 65px;
+}
+input{
+  width: 85px;
+  height: 30px;
+  border-radius: 50px;
+}
+.ss{
+  position:absolute; 
+  padding: 0px 450px;
+  color:white;
+  font-size: 20px;
+  font-family: Algerian ;
+}
+.button {
+    background-color: black;
+    
+    border-radius: 15px;
+    color: yellow;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 140px;
+    height: 40px;
+    float: right;
+}
