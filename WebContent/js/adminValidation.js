@@ -5,11 +5,14 @@ function validateFunction(){
 	var password = document.getElementById("pass").value;
 	var type = document.getElementById("type").value;
 
-if((Name=="")||(/^\s*$/.test(Name))){
-	alert("Name can't be blank");
-}
-else if(Name.match(/^[a-zA-Z]+$/)){
-
+	// Not sure what exactly are we trying to say here
+	// If we are about to check whether the Name is empty
+	// Trim the content and check
+	if((Name=="")||(/^\s*$/.test(Name))){
+		alert("Name can't be blank");
+	}
+	else if(Name.match(/^[a-zA-Z]+$/)){
+		// Never leave a empty block
 	}
 	else{alert("Use characters only");}
 	if((dob=="")||(/^\s*$/.test(dob))){
