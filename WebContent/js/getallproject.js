@@ -1,6 +1,6 @@
 //get all project list
 $(window).on('load',function(){
-	$('#id').click(function() {
+	$('#id1').click(function() {
 	var url="http://localhost:8080/smartBook/project?operation=4" ;
 
 	$.ajax(url)
