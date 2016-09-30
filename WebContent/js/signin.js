@@ -14,11 +14,11 @@ $(window).on('load',function() {
     .done(function(result) {
       var response = JSON.parse(result);
         // converted to JSON Object
-        if(response.type=="admin"){
+        if(response.type=="Admin"){
           
             window.location("nav.html");
           }
-          else if(response.type=="user"){
+          else if(response.type=="User"){
             window.location("employeeadd.html");
           }
           else{
