@@ -9,7 +9,7 @@ $(window).on('load',function() {
 
     var url = "http://localhost:8080/smartBook/user?operation=7&userName="+un+"&pass="+pw;
     // Call this URL for Server side actions
-
+//hello venkat
     $.ajax(url)
     .done(function(result) {
       var response = JSON.parse(result);
