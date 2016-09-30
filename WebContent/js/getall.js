@@ -20,6 +20,6 @@ var table=$('#div1').children();
 //}
 });
 
-});    //change file
+});   
    
 });
