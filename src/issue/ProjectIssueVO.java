@@ -6,7 +6,7 @@ public class ProjectIssueVO {
     int projectId;
     String discription;
     int userId;
-    long findtime;  // find time
+    long findtime;  
     long fixedtime;
 
     public long getIssueId() {
