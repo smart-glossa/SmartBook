@@ -6,7 +6,7 @@ $(window).on('load',function() {
 		var pass=$('#pass').val();
 		//var image=$('#photo').val();
 		var type=$('#type').val();
-		var url=" http://localhost:8080/smartBook/user?operation=1&Name="+name+"&dob="+DoB+"&userName="+username+"&pass="+pass+"&type="+type;	
+		var url=" /SmartBook/user?operation=1&Name="+name+"&dob="+DoB+"&userName="+username+"&pass="+pass+"&type="+type;	
 			$.ajax(url)
 		.done(function(result) {  // result is the response from Server
 			//console.log(result);  //alert will not display JSONObject, so using console log

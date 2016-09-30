@@ -1,7 +1,7 @@
 //get all project list
 $(window).on('load',function(){
 	$('#id').click(function() {
-	var url="http://localhost:8080/smartBook/project?operation=4" ;
+	var url="/SmartBook/project?operation=4" ;
 
 	$.ajax(url)
 .done(function(result) {
@@ -37,7 +37,7 @@ $('#projectId').click(function() {
 	//remove("projectId");
 	//('projectId').remove();
 	//$(this).attr('projectId');
-	var url="http://localhost:8080/smartBook/project?mode=3&projectId=1";
+	var url="/SmartBook/project?mode=3&projectId=1";
 	$.ajax(url)
 	.done(function(result){
 		//console.log(result);

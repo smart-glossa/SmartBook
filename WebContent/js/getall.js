@@ -1,6 +1,6 @@
 $(window).on('load',function(){
 $('#des').click(function(){
-	var url="http://localhost:8080/smartBook/user?operation=4" ;
+	var url="/SmartBook/user?operation=4" ;
 $.ajax(url)
 .done(function(result) {
 	  var res=JSON.parse(result);

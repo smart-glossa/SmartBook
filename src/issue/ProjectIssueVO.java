@@ -3,55 +3,68 @@ package issue;
 public class ProjectIssueVO {
 
     long issueId;
-    int projectId;
+    long projectId;
     String description;
-    int userId;
-    long findtime;
-    long fixedtime;
-
+    long finderId;
+    long findTime;
+    int status;
+    long fixerId;
+    long fixTime;
+    
     public long getIssueId() {
         return issueId;
     }
-
     public ProjectIssueVO setIssueId(long issueId) {
         this.issueId = issueId;
         return this;
     }
-
-    public int getprojectId() {
+    public long getProjectId() {
         return projectId;
     }
-
-    public ProjectIssueVO setdescription(String dis) {
-        this.description = dis;
+    public ProjectIssueVO setProjectId(long projectId) {
+        this.projectId = projectId;
         return this;
     }
-
-    public int getuserId() {
-        return userId;
+    public String getDescription() {
+        return description;
     }
-
-    public ProjectIssueVO setuserId(int userId) {
-        this.userId = userId;
+    public ProjectIssueVO setDescription(String description) {
+        this.description = description;
         return this;
     }
-
-    public long getfindtime() {
-        return findtime;
+    public long getFinderId() {
+        return finderId;
     }
-
-    public ProjectIssueVO setfindtime(long findtime) {
-        this.findtime = findtime;
+    public ProjectIssueVO setFinderId(long finderId) {
+        this.finderId = finderId;
         return this;
     }
-
-    public long getfixedtime() {
-        return fixedtime;
+    public long getFindTime() {
+        return findTime;
     }
-
-    public ProjectIssueVO setfixedtime(long fixedtime) {
-
-        this.fixedtime = fixedtime;
+    public ProjectIssueVO setFindTime(long findTime) {
+        this.findTime = findTime;
+        return this;
+    }
+    public int getStatus() {
+        return status;
+    }
+    public ProjectIssueVO setStatus(int status) {
+        this.status = status;
+        return this;
+    }
+    public long getFixerId() {
+        return fixerId;
+    }
+    public ProjectIssueVO setFixerId(long fixerId) {
+        this.fixerId = fixerId;
+        return this;
+    }
+    public long getFixTime() {
+        return fixTime;
+    }
+    public ProjectIssueVO setFixTime(long fixTime) {
+        this.fixTime = fixTime;
         return this;
     }
 }
