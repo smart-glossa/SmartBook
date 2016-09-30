@@ -4,9 +4,9 @@ public class ProjectIssueVO {
 
     long issueId;
     int projectId;
-    String discription;
+    String description;
     int userId;
-    long findtime;  
+    long findtime;
     long fixedtime;
 
     public long getIssueId() {
@@ -22,8 +22,8 @@ public class ProjectIssueVO {
         return projectId;
     }
 
-    public ProjectIssueVO setdiscription(String dis) {
-        this.discription = dis;
+    public ProjectIssueVO setdescription(String dis) {
+        this.description = dis;
         return this;
     }
 
