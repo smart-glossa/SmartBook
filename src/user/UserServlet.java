@@ -105,7 +105,6 @@ public class UserServlet extends HttpServlet {
         String userName = request.getParameter("userName");
         try {
             UserVO user = UserBL.getObject().getUser(userName);
-            result.put("status", 1);
             if (user.getuserId() != -1l) {
                 result.put("userId", user.getuserId());
                 result.put("Name", user.getName());
