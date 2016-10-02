@@ -1,12 +1,10 @@
 package image;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import common.MySQLConstants;
+import common.MySqlConstant;
 
 public class ImageDB {
 
@@ -15,10 +13,7 @@ public class ImageDB {
     }
     
     public void addImage(ImageVO image) throws ClassNotFoundException, SQLException {
-        Class.forName(MySQLConstants.mysqlDriver);
-        Connection connection = DriverManager.getConnection(MySQLConstants.mysqlPath + MySQLConstants.database,
-                MySQLConstants.userName, MySQLConstants.password);
-        Statement statement = connection.createStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Insert into Image(imageContent, imageSize, imageType, uploadedTime) Values (" + image.getImageContent()
                 + ", " + image.getImageSize() + ",'" + image.getImageType() + "'," + image.getUploadedTime()
                 + ")";
@@ -27,10 +22,7 @@ public class ImageDB {
     }
     
     public void updateImage(ImageVO image) throws ClassNotFoundException, SQLException {
-        Class.forName(MySQLConstants.mysqlDriver);
-        Connection connection = DriverManager.getConnection(MySQLConstants.mysqlPath + MySQLConstants.database,
-                MySQLConstants.userName, MySQLConstants.password);
-        Statement statement = connection.createStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Update Image set imageContent =" + image.getImageContent() + ", imageSize="
                 + image.getImageSize() + ", imageType='" + image.getImageType() + "', uploadedTime="
                 + image.getUploadedTime() + " where imageId = " + image.getImageId();
@@ -38,22 +30,14 @@ public class ImageDB {
     }
     
     public void deleteImage(long imageId) throws ClassNotFoundException, SQLException{
-        Class.forName(MySQLConstants.mysqlDriver);
-        Connection connection = DriverManager.getConnection(MySQLConstants.mysqlPath 
-                + MySQLConstants.database, 
-                MySQLConstants.userName, MySQLConstants.password);
-        Statement statement = connection.createStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Delete from Image where imageId =" + imageId;
         statement.execute(query);
     }
     
     public ImageVO getImage(long imageId) throws ClassNotFoundException, SQLException {
         ImageVO image = new ImageVO();
-        Class.forName(MySQLConstants.mysqlDriver);
-        Connection connection = DriverManager.getConnection(MySQLConstants.mysqlPath 
-                + MySQLConstants.database, 
-                MySQLConstants.userName, MySQLConstants.password);
-        Statement statement = connection.createStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Select * from Image where imageId =" + imageId;
         ResultSet rs = statement.executeQuery(query);
         if (rs.next()) {

@@ -1,12 +1,10 @@
 package issue;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import common.MySQLConstants;
+import common.MySqlConstant;
 
 public class ProjectIssueDB {
 
@@ -15,11 +13,7 @@ public class ProjectIssueDB {
     }
     
     public void addProjectIssue(ProjectIssueVO issue) throws ClassNotFoundException, SQLException {
-        Class.forName(MySQLConstants.mysqlDriver);
-        Connection connection = DriverManager.getConnection(MySQLConstants.mysqlPath 
-                + MySQLConstants.database, 
-                MySQLConstants.userName, MySQLConstants.password);
-        Statement statement = connection.createStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Insert into ProjectIssue(projectId, description, finderId" 
                 + "findTime, status, fixerId, fixTime) Values ("
                 + issue.getProjectId() + ", '" + issue.getDescription() + "',"
@@ -31,11 +25,7 @@ public class ProjectIssueDB {
     }
     
     public void updateProjectIssue(ProjectIssueVO project) throws ClassNotFoundException, SQLException {
-        Class.forName(MySQLConstants.mysqlDriver);
-        Connection connection = DriverManager.getConnection(MySQLConstants.mysqlPath 
-                + MySQLConstants.database, 
-                MySQLConstants.userName, MySQLConstants.password);
-        Statement statement = connection.createStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Update ProjectIssue set projectId ='" 
                 + project.getProjectId() + "', description='" + project.getDescription() + "', finderId="
                 + project.getFinderId() + ", findTime=" + project.getFindTime() + ",status="
@@ -45,22 +35,14 @@ public class ProjectIssueDB {
     }
     
     public void deleteProjectIssue(long issueId) throws ClassNotFoundException, SQLException{
-        Class.forName(MySQLConstants.mysqlDriver);
-        Connection connection = DriverManager.getConnection(MySQLConstants.mysqlPath 
-                + MySQLConstants.database, 
-                MySQLConstants.userName, MySQLConstants.password);
-        Statement statement = connection.createStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Delete from ProjectIssue where issueId =" + issueId;
         statement.execute(query);
     }
     
     public ProjectIssueVO getProjectIssue(long issueId) throws ClassNotFoundException, SQLException {
         ProjectIssueVO issue = new ProjectIssueVO();
-        Class.forName(MySQLConstants.mysqlDriver);
-        Connection connection = DriverManager.getConnection(MySQLConstants.mysqlPath 
-                + MySQLConstants.database, 
-                MySQLConstants.userName, MySQLConstants.password);
-        Statement statement = connection.createStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Select * from projectIssue where issueId =" + issueId;
         ResultSet rs = statement.executeQuery(query);
         if (rs.next()) {

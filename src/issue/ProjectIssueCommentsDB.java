@@ -1,12 +1,10 @@
 package issue;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import common.MySQLConstants;
+import common.MySqlConstant;
 
 public class ProjectIssueCommentsDB {
 
@@ -15,10 +13,7 @@ public class ProjectIssueCommentsDB {
     }
     
     public void addIssueComment(ProjectIssueCommentsVO comment) throws ClassNotFoundException, SQLException {
-        Class.forName(MySQLConstants.mysqlDriver);
-        Connection connection = DriverManager.getConnection(MySQLConstants.mysqlPath + MySQLConstants.database,
-                MySQLConstants.userName, MySQLConstants.password);
-        Statement statement = connection.createStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Insert into IssueComments(IssueId, userId, content,time) Values (" + comment.getIssueId()
                 + ", " + comment.getUserId() + ",'" + comment.getContent() + "'," + comment.getCommentTime()
                 + ")";
@@ -27,10 +22,7 @@ public class ProjectIssueCommentsDB {
     }
     
     public void updateIssueComment(ProjectIssueCommentsVO project) throws ClassNotFoundException, SQLException {
-        Class.forName(MySQLConstants.mysqlDriver);
-        Connection connection = DriverManager.getConnection(MySQLConstants.mysqlPath + MySQLConstants.database,
-                MySQLConstants.userName, MySQLConstants.password);
-        Statement statement = connection.createStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Update IssueComments set IssueId =" + project.getIssueId() + ", userId="
                 + project.getUserId() + ", content='" + project.getContent() + "', time="
                 + project.getCommentTime() + " where commentId = " + project.getCommentId();
@@ -38,22 +30,14 @@ public class ProjectIssueCommentsDB {
     }
     
     public void deleteIssueComment(long commentId) throws ClassNotFoundException, SQLException{
-        Class.forName(MySQLConstants.mysqlDriver);
-        Connection connection = DriverManager.getConnection(MySQLConstants.mysqlPath 
-                + MySQLConstants.database, 
-                MySQLConstants.userName, MySQLConstants.password);
-        Statement statement = connection.createStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Delete from IssueComments where commentId =" + commentId;
         statement.execute(query);
     }
     
     public ProjectIssueCommentsVO getIssueComment(long commentId) throws ClassNotFoundException, SQLException {
         ProjectIssueCommentsVO comment = new ProjectIssueCommentsVO();
-        Class.forName(MySQLConstants.mysqlDriver);
-        Connection connection = DriverManager.getConnection(MySQLConstants.mysqlPath 
-                + MySQLConstants.database, 
-                MySQLConstants.userName, MySQLConstants.password);
-        Statement statement = connection.createStatement();
+        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Select * from IssueComments where commentId =" + commentId;
         ResultSet rs = statement.executeQuery(query);
         if (rs.next()) {
