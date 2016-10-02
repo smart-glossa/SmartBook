@@ -28,10 +28,6 @@ $(window).on('load', function() {
             .fail(function(result) {
                 console.log(result);
                 //alert("failure");
-                $('#userName').val(res.userName);
-                $('#type').val(res.type);
-                $('#userId').val(res.userId);
-                $('#Name').val(res.Name);
             });
     });
 });
