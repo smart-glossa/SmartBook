@@ -39,5 +39,15 @@
         <servlet-name>Member</servlet-name>
         <url-pattern>/member  </url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Comments</servlet-name>
+        <servlet-class>Comments.ProjectCommentsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Comments</servlet-name>
+        <url-pattern>/comment  </url-pattern>
+    </servlet-mapping>
 </web-app>
  
