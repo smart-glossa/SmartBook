@@ -25,21 +25,17 @@ li a:hover {
     color: white;
     
 }
-h2{
+.head{
   background-color: #2962ff;
   color: white;
-  height: 45px;
-  padding-top:30px; 
+  height: 75px; 
   font-family: Algerian;
   font-size: 28px;
+  text-align: center;
 
 }
 
-img{
-  float: right;
-  border-radius: 40px;
-  width: 65px;
-}
+
 input{
   width: 85px;
   height: 30px;
@@ -54,7 +50,6 @@ input{
 }
 .button {
     background-color: black;
-    
     border-radius: 15px;
     color: yellow;
     display: inline-block;
@@ -64,4 +59,10 @@ input{
     width: 140px;
     height: 40px;
     float: right;
+}
+#rf{
+  float: left;
+}
+#re{
+  float: left;
 }
