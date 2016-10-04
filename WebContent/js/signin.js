@@ -5,31 +5,30 @@ $(window).on('load',function() {
     var pw = $('#pass').val();
     
 
-    
-
-    var url = "/SmartBook/user?operation=7&userName="+un+"&pass="+pw;
+    var url = "http://localhost:8080/smartBook/user?operation=7&userName="+un+"&pass="+pw;
     // Call this URL for Server side actions
 
     $.ajax(url)
     .done(function(result) {
+      
       var response = JSON.parse(result);
+      var res = response[0];
         // converted to JSON Object
-        if(response.type=="Admin"){
+        if(res.type=="Admin"){
           
-            window.location("nav.html");
+            window.location.href='nav.html';
           }
-          else if(response.type=="User"){
-            window.location("employeeadd.html");
+          else if(res.type=="User"){
+            
+            window.location.href='nav.html';
           }
           else{
-            alert(response);
+            alert("Incorrect User_Name/Password");
           }
-       
- 
     })
     .fail(function(result) {
       console.log(result);
-        
+       
     });
 
   });
