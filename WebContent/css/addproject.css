@@ -5,7 +5,10 @@ body
 .head
 {
 	background-color: #2962ff;
+	padding: 10px;
+   height: 90px;
 }
+
 ul {
     list-style-type: none;     
     overflow: hidden;    
@@ -108,7 +111,10 @@ input
 	outline: none;
 
 }
-
+#tab
+{
+	float: left;
+}
 h3
 {
 	font-weight: bold;
