@@ -9,8 +9,8 @@ public class MySqlConstant {
     public static String MYSQL_DRIVER = "com.mysql.jdbc.Driver";
     public static String MYSQL_PATH = "jdbc:mysql://localhost:3306/";
     public static String DATABASE_NAME = "SMARTBOOK";
-    public static String USERNAME ="root";                             //System.getProperty("mysql.username");
-    public static String PASSWORD ="root";                            //System.getProperty("mysql.password");
+    public static String USERNAME =System.getProperty("mysql.username");
+    public static String PASSWORD =System.getProperty("mysql.password");
 
     public static MySqlConstant getInstance() {
         return new MySqlConstant();
