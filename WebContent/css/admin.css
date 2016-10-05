@@ -4,7 +4,7 @@
 }
 h1{
 	color: #ffffff;
-	
+    
 	
 }
 .but{
@@ -23,7 +23,7 @@ h1{
 	background-color: #fafafa;
 	z-index: 100;
 	display: none;
-	
+	left: 600px;
 
 }
 .sig{
@@ -88,17 +88,11 @@ h2{
 	color: #2979ff;
 }
 #lbut{
-    background-color: lightgray;
-    border-radius: 15px;
-    color: black;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    width: 160px;
-    height: 40px;
-    float: right;
-   
-}
-	
+	float: right;
+	color: #ffffff;
+	background-color: #2079f9;
 
+	border: 0;
+	size: 20px;
+	
+}
