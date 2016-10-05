@@ -2,13 +2,13 @@ package issue;
 
 public class ProjectIssueVO {
 
-    long issueId;
-    long projectId;
+	long issueId;
+    int projectId;
     String description;
-    long finderId;
+    int finderId;
     long findTime;
     int status;
-    long fixerId;
+    int fixedId;
     long fixTime;
     
     public long getIssueId() {
@@ -18,10 +18,10 @@ public class ProjectIssueVO {
         this.issueId = issueId;
         return this;
     }
-    public long getProjectId() {
+    public int getProjectId() {
         return projectId;
     }
-    public ProjectIssueVO setProjectId(long projectId) {
+    public ProjectIssueVO setProjectId(int projectId) {
         this.projectId = projectId;
         return this;
     }
@@ -32,12 +32,21 @@ public class ProjectIssueVO {
         this.description = description;
         return this;
     }
-    public long getFinderId() {
+    public int getFinderId() {
         return finderId;
     }
-    public ProjectIssueVO setFinderId(long finderId) {
+    public ProjectIssueVO setFinderId(int finderId) {
         this.finderId = finderId;
         return this;
+    }
+    public int getStatus()
+    {
+    	return status;
+    }
+    public ProjectIssueVO setStatus(int status)
+    {
+    	this.status=status;
+    	return this;
     }
     public long getFindTime() {
         return findTime;
@@ -46,25 +55,19 @@ public class ProjectIssueVO {
         this.findTime = findTime;
         return this;
     }
-    public int getStatus() {
-        return status;
+    public int getFixedId() {
+        return fixedId;
     }
-    public ProjectIssueVO setStatus(int status) {
-        this.status = status;
-        return this;
-    }
-    public long getFixerId() {
-        return fixerId;
-    }
-    public ProjectIssueVO setFixerId(long fixerId) {
-        this.fixerId = fixerId;
+    public ProjectIssueVO setFixedId(int fixedId) {
+        this.fixedId = fixedId;
         return this;
     }
     public long getFixTime() {
         return fixTime;
     }
-    public ProjectIssueVO setFixTime(long fixTime) {
-        this.fixTime = fixTime;
+    public ProjectIssueVO setFixTime(long  fixTime) {
+        this.fixTime =  fixTime;
         return this;
     }
+
 }

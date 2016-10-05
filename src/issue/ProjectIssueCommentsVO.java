@@ -2,45 +2,46 @@ package issue;
 
 public class ProjectIssueCommentsVO {
 
-    long commentId;
-    long issueId;
+	long commentId;
+    long issueId = -1l;
     long userId;
     String content;
-    long commentTime;
+    String time;
     
     public long getCommentId() {
         return commentId;
     }
-    public ProjectIssueCommentsVO setCommentId(long commentId) {
+    public ProjectCommentsVO setCommentId(long commentId) {
         this.commentId = commentId;
         return this;
     }
-    public long getIssueId() {
+    public long getissueId() {
         return issueId;
     }
-    public ProjectIssueCommentsVO setIssueId(long issueId) {
+    public ProjectCommentsVO setissueId(long issueId) {
         this.issueId = issueId;
         return this;
     }
     public long getUserId() {
         return userId;
     }
-    public ProjectIssueCommentsVO setUserId(long userId) {
+    public ProjectCommentsVO setUserId(long userId) {
         this.userId = userId;
         return this;
     }
-    public String getContent() {
+    public String getCommentContent() {
         return content;
     }
-    public ProjectIssueCommentsVO setContent(String content) {
-        this.content = content;
+    public ProjectCommentsVO setCommentContent(String Content) {
+        this.content = Content;
         return this;
     }
-    public long getCommentTime() {
-        return commentTime;
+    public String getCommentTime() {
+        return  time;
     }
-    public ProjectIssueCommentsVO setCommentTime(long commentTime) {
-        this.commentTime = commentTime;
+    public ProjectCommentsVO setCommentTime(String time) {
+        this.time = time;
         return this;
     }
 }
+
