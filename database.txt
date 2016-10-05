@@ -15,3 +15,85 @@ CREATE TABLE Project (
   date varchar(100),
   status varchar(20)
 )
+
+ ///ajith  this my database  table :///
+
+create database smartbook;
+
+user:
+
+CREATE TABLE  user (
+  userId bigint(20) NOT NULL auto_increment,
+  Name varchar(50) default NULL,
+  dob varchar(50) default NULL,
+  userName varchar(50) default NULL,
+  pass varchar(50) default NULL,
+  imageId bigint(20) default NULL,
+  type varchar(50) default NULL,
+  PRIMARY KEY  (`userId),
+  KEY  user_FK_IDX (imageId),
+  CONSTRAINT user_FK FOREIGN KEY (imageId) REFERENCES  image(imageId) ON DELETE CASCADE
+) 
+
+project:
+
+CREATE TABLE project (
+  projectId bigint(20) NOT NULL auto_increment,
+  ptitle varchar(200) default NULL,
+  dis varchar(200) default NULL,
+  pdate varchar(200) default NULL,
+  status varchar(200) default NULL,
+  PRIMARY KEY  (`projectId`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8
+
+member:
+
+CREATE TABLE  projectmember (
+  memberId bigint(20) NOT NULL auto_increment,
+  projectId bigint(50) default NULL,
+  ptitle varchar(200) default NULL,
+  userName varchar(200) default NULL,
+  PRIMARY KEY  (memberId)
+) 
+
+image:  //image is a  temp  table 
+
+CREATE TABLE `image` (
+  `imageId` bigint(20) NOT NULL auto_increment,
+  `imagepath` varchar(50) default NULL,
+  PRIMARY KEY  (`imageId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+
+comment:
+
+CREATE TABLE issuecomment (
+  commentId bigint(20) NOT NULL auto_increment,
+  issueId bigint(20) default NULL,
+  userId bigint(20) default NULL,
+  content varchar(250) default NULL,
+  time varchar(50) default NULL,
+  PRIMARY KEY  (`commentId`),
+  KEY issuecomment_FKS(issueId),
+  KEY issuecomment_FKX(userId),
+  CONSTRAINT issuecomment_FK FOREIGN KEY (issueId) REFERENCES projectissue(issueId) ON DELETE CASCADE,
+  CONSTRAINT issuecomment_FKS FOREIGN KEY (userId) REFERENCES user (userId) ON DELETE CASCADE
+)
+
+issue:
+
+CREATE TABLE projectissue(
+  issueId bigint(20) NOT NULL auto_increment,
+  projectId long default NULL,
+  description varchar(200) default NULL,
+  finderId bigint(20) default NULL,
+  findtime long default NULL,
+   status int(50)default Null,
+  fixedId bigint(20) default NULL,
+  fixtime long default NULL,
+  PRIMARY KEY  (issueId),
+  KEY projectissue_FKS(finderId),
+  KEY issuecomments_FKX(fixedId),
+  CONSTRAINT projectissue_FK FOREIGN KEY(finderId) REFERENCES user(userId) ON DELETE CASCADE,
+  CONSTRAINT projectissue_FKS FOREIGN KEY(fixedId) REFERENCES user(userId) ON DELETE CASCADE
+)
