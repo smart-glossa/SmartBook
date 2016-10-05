@@ -28,6 +28,7 @@ $(window).on('load', function() {
             .fail(function(result) {
                 console.log(result);
                 //alert("failure");
+                
             });
     });
 });
