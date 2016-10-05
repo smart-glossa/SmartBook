@@ -1,11 +1,11 @@
 $(window).on('load',function() {
-  $('#sign').click(function() {
+  $(document).on('click','#sign',function() {
     // Get the value from the textbox
     var un = $('#userName').val();
     var pw = $('#pass').val();
     
 
-    var url = "http://localhost:8080/smartBook/user?operation=7&userName="+un+"&pass="+pw;
+    var url = "/smartBook/user?operation=7&userName="+un+"&pass="+pw;
     // Call this URL for Server side actions
 
     $.ajax(url)
@@ -28,7 +28,7 @@ $(window).on('load',function() {
     })
     .fail(function(result) {
       console.log(result);
-       
+        //alert("Error: " + result);
     });
 
   });
