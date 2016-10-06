@@ -59,7 +59,7 @@ public class ProjectCommentsDB {
 	        }
 	        return comment;
 	    }
-	    public List<ProjectCommentsVO> Getcomment()
+	    public List<ProjectCommentsVO> getComments()
 	            throws Exception {
 	        List<ProjectCommentsVO> comment = new ArrayList<>();
 	        Statement statement = MySqlConstant.getInstance().getCreatedStatement();

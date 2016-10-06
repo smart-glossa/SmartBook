@@ -39,7 +39,7 @@ public class ProjectIssueCommentsBL {
     	return ProjectCommentsDB.getObject().getProjectComment(commentId);
     }
     public List<ProjectCommentsVO> GetAlls() throws Exception {
-        return ProjectCommentsDB.getObject().Getcomment();
+        return ProjectCommentsDB.getObject().getComments();
     }
 
 }

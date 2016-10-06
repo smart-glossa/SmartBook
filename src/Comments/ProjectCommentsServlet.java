@@ -42,19 +42,19 @@ public class ProjectCommentsServlet extends HttpServlet {
 		 {
 	        switch(operation) {
 	        case ProjectCommentsConstants.REQ_CREATEMODE:
-	            CreateProjectComment(request, response);
+	            createProjectComment(request, response);
 	            break;
 	        case ProjectCommentsConstants.REQ_UPDATEMODE:
-	            UpdateProjectComment(request, response);
+	            updateProjectComment(request, response);
 	            break;
 	        case ProjectCommentsConstants.REQ_DELETEMODE:
-	            DeleteProjectComment(request, response);
+	            deleteProjectComment(request, response);
 	            break;
 	        case ProjectCommentsConstants.REQ_GETMODE:
-	            GetProjectCommentDetail(request, response);
+	            getProjectCommentDetail(request, response);
 	            break;
 	        case ProjectCommentsConstants.REQ_GETALLMODE:
-	        	GetAll(request,response);
+	        	getAll(request,response);
 	        	break;
 	        }
 		 }catch(Exception e)
@@ -63,7 +63,7 @@ public class ProjectCommentsServlet extends HttpServlet {
 		 }
 	    }
 	    
-		private void CreateProjectComment(HttpServletRequest request, HttpServletResponse response) 
+		private void createProjectComment(HttpServletRequest request, HttpServletResponse response) 
 				throws JSONException, IOException {
 	        
 			JSONObject result = new JSONObject();
@@ -85,7 +85,7 @@ public class ProjectCommentsServlet extends HttpServlet {
 	        
 	    }
 	    
-	    private void UpdateProjectComment(HttpServletRequest request, HttpServletResponse response) 
+	    private void updateProjectComment(HttpServletRequest request, HttpServletResponse response) 
 	    		throws JSONException, IOException {
 	        
 	    	JSONObject result = new JSONObject();
@@ -107,7 +107,7 @@ public class ProjectCommentsServlet extends HttpServlet {
 	        
 	    }
 	    
-	    private void DeleteProjectComment(HttpServletRequest request, HttpServletResponse response) 
+	    private void deleteProjectComment(HttpServletRequest request, HttpServletResponse response) 
 	    		throws JSONException, IOException {
 	        
 	    	JSONObject result = new JSONObject();
@@ -122,7 +122,7 @@ public class ProjectCommentsServlet extends HttpServlet {
 	        response.getWriter().print(result);   
 	    }
 	    
-	    private void GetProjectCommentDetail(HttpServletRequest request, HttpServletResponse response) 
+	    private void getProjectCommentDetail(HttpServletRequest request, HttpServletResponse response) 
 	    		throws JSONException, IOException {
 	        
 	    	JSONObject result = new JSONObject();
@@ -146,14 +146,14 @@ public class ProjectCommentsServlet extends HttpServlet {
 	        response.getWriter().print(result);
 
 	}
-	    private void GetAll(HttpServletRequest request, HttpServletResponse response) 
+	    private void getAll(HttpServletRequest request, HttpServletResponse response) 
 	    		throws JSONException, IOException {
 
 	    	 JSONObject all = new JSONObject();
 	         JSONArray getall = new JSONArray();
 
 	         try {
-	             List<ProjectCommentsVO> allcomment = ProjectCommentsBL.getObject().GetAlls();
+	             List<ProjectCommentsVO> allcomment = ProjectCommentsBL.getObject().getAllComments();
 	             for (ProjectCommentsVO vo : allcomment) {
 	                 if (vo.getCommentId() != 1l) {
 	                     JSONObject get = new JSONObject();

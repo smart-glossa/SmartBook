@@ -135,7 +135,7 @@ public class ProjectIssueCommentsServlet {
 	         JSONArray getall = new JSONArray();
 
 	         try {
-	             List<ProjectCommentsVO> allcomment = ProjectCommentsBL.getObject().GetAlls();
+	             List<ProjectCommentsVO> allcomment = ProjectCommentsBL.getObject().getAllComments();
 	             for (ProjectCommentsVO vo : allcomment) {
 	                 if (vo.getCommentId() != 1l) {
 	                     JSONObject get = new JSONObject();

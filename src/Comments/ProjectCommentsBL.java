@@ -41,8 +41,8 @@ public class ProjectCommentsBL {
 	        
 	    	return ProjectCommentsDB.getObject().getProjectComment(commentId);
 	    }
-	    public List<ProjectCommentsVO> GetAlls() throws Exception {
-	        return ProjectCommentsDB.getObject().Getcomment();
+	    public List<ProjectCommentsVO> getAllComments() throws Exception {
+	        return ProjectCommentsDB.getObject().getComments();
 	    }
 
 	}
