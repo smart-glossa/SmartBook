@@ -1,4 +1,4 @@
-package Comments;
+package comments;
 
 import java.sql.SQLException;
 import java.text.ParseException;

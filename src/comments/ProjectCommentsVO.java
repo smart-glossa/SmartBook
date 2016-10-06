@@ -1,4 +1,4 @@
-package Comments;
+package comments;
 
 public class ProjectCommentsVO {
 	long commentId;

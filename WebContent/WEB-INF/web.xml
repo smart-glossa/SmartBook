@@ -32,12 +32,12 @@
     </servlet-mapping>
 
    <servlet>
-        <servlet-name>IssueCommand</servlet-name>
+        <servlet-name>IssueComment</servlet-name>
         <servlet-class>issue.ProjectCommentsServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>IssueCommand</servlet-name>
-        <url-pattern>/command  </url-pattern>
+        <servlet-name>IssueComment</servlet-name>
+        <url-pattern>/comment  </url-pattern>
     </servlet-mapping>
 
 <servlet>

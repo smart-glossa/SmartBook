@@ -7,6 +7,7 @@ function validateFunction() {
 
     if ((Name == "") || (/^\s*$/.test(Name))) {
         alert("Name can't be blank");
+        return true;
     } else if (Name.match(/^[a-zA-Z]+$/)) {
 
     } else {
@@ -14,9 +15,11 @@ function validateFunction() {
     }
     if ((dob == "") || (/^\s*$/.test(dob))) {
         alert("Date of Birth can't be blank");
+        return true;
     } else {}
     if ((userName == "") || (/^\s*$/.test(userName))) {
         alert("User Name can't blank");
+        return true;
     } else if (userName.match(/^[a-zA-Z0-9]*$/)) {
 
     } else {
@@ -24,11 +27,13 @@ function validateFunction() {
     }
     if ((password == "") || (/^\s*$/.test(password))) {
         alert("Enter password here");
+        return true;
     } else if (password.length < 6) {
-        alert("Password length is minimum six")
+        alert("Password length is minimum six");
+        return true;
     } else if (password.match(/^[a-zA-Z0-9]+$/)) {
 
     } else {}
-
+    return false;
 
 }

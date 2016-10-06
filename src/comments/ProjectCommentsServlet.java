@@ -1,4 +1,4 @@
-package Comments;
+package comments;
 
 import java.io.IOException;
 import java.util.List;
