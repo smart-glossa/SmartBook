@@ -16,12 +16,12 @@ h1 {
 
 #signin {
     position: absolute;
-    opacity: 0.9;
     width: 250px;
     height: 400px;
     background-color: #fafafa;
     z-index: 100;
     display: none;
+    left: 600px;
 }
 
 .sig {
@@ -70,7 +70,6 @@ h2 {
 
 .login {
     position: initial;
-    opacity: 0.5;
     background-color: #ffffff;
     border: 2px;
     width: 100%;
@@ -96,14 +95,9 @@ h2 {
 }
 
 #lbut {
-    background-color: lightgray;
-    border-radius: 15px;
-    color: black;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    width: 160px;
-    height: 40px;
     float: right;
+    color: #ffffff;
+    background-color: #2079f9;
+    border: 0;
+    size: 20px;
 }
