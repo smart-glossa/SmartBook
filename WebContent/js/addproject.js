@@ -27,7 +27,7 @@ $(window).on('load',function() {
 	   var  desc=$('#dis').val();
 		var duedate=$('#pdate').val();
 		var status =$('#status').val();
-		var url="http://localhost:8080/smartBook/project?operation=2&projectId="+ proid +"&ptitle="+ title +"&dis="+ desc +"&date="+ duedate +"&status="+status;
+		var url="/smartBook/project?operation=2&projectId="+ proid +"&ptitle="+ title +"&dis="+ desc +"&date="+ duedate +"&status="+status;
 		$.ajax(url)
 		.done(function(result) {  // result is the response from Server
 			console.log(result); 

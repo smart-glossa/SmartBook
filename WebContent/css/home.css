@@ -25,13 +25,13 @@ li a:hover {
     color: white;
     
 }
-.head{
+.he{
   background-color: #2962ff;
+  padding:10px;
   color: white;
-  height: 75px; 
+  height: 70px; 
   font-family: Algerian;
   font-size: 28px;
-  text-align: center;
 
 }
 

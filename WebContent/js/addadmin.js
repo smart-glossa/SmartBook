@@ -16,6 +16,16 @@ $(window).on('load', function() {
                 if (response.status == 1) {
                     window.location.href = 'nav.html';
                 }
+                //get the user name only
+                function getusername(){
+                    var user=JSON.username({
+                        'response':$('#userName').val()
+                       
+                    });
+                    var response=JSON.parse(JSON.username);
+                    $("#userName").val(username);
+                    return response.username;
+                }
             })
             .fail(function(result) { // If any failure, then code will be here
                 console.log(result);

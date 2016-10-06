@@ -36,7 +36,7 @@ li {
 	text-align: center;
 	padding-right: 35px;
 	background-color: #757575;
-	padding-top: 0px;
+	
 	font-size: 19px;
 	border: 10px solid #212121;
 	color: white;
@@ -130,7 +130,10 @@ button
 	background-color:#424242;
 	 
 }
-
+#po
+{
+	border-radius: 50%;
+}
 button:hover
 {
 	background-color: #2962ff;
@@ -157,7 +160,9 @@ table
 width: 70%;
 height: 20%;
 
-	}	
+	}
+	
+
 
 
 

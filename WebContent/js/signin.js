@@ -19,7 +19,7 @@ $(window).on('load', function() {
                     window.location.href = 'nav.html';
                 } else if (res.type == "User") {
 
-                    window.location.href = 'nav.html';
+                    window.location.href = 'emphome.html';
                 } else {
                     alert("Incorrect User_Name/Password");
                 }

@@ -1,6 +1,6 @@
 $(window).on('load',function(){
 $('#des').click(function(){
-	var url="/SmartBook/user?operation=4" ;
+	var url="/smartBook/user?operation=4" ;
 $.ajax(url)
 .done(function(result) {
 	  var res=JSON.parse(result);
@@ -20,6 +20,6 @@ var table=$('#div1').children();
 //}
 });
 
-});   
+});
    
 });

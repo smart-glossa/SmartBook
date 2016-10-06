@@ -21,7 +21,7 @@ var table=$('#div1').children();
    // rowString.append(im);
 
  }
- var im=$("table td:nth-child(6)").append('<img  src="images/4.png" id="projectId" class="remov"/>');
+ var im=$("table td:nth-child(6)").append('<img  src="../images/4.png" id="projectId" class="remov"/>');
  //$(this).attr('id',   this.id + '_' + projectId);
  $("table td:nth-child(6)").append('<h5 id=""><a href="update.html">Update</a></h5>');
 
