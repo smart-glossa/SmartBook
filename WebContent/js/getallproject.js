@@ -1,7 +1,7 @@
 //get all project list
 $(window).on('load',function(){
 	$('#id').click(function() {
-	var url="/SmartBook/project?operation=4" ;
+	var url="/smartBook/project?operation=4" ;
 
 	$.ajax(url)
 .done(function(result) {
@@ -11,7 +11,7 @@ var table=$('#div1').children();
   var tablebody=table.remove();
   $('#div1').append("<table class='tablerow'></table>");
   var table=$('#div1').children();        
-  table.append("<tr><th>Duedate</th><th>title</th><th>projectId</th><th>desc</th><th>status</th><th>Action</th></tr>");
+  table.append("<tr><th>Duedate</th><th>title</th><th>SerialNo</th><th>desc</th><th>status</th><th>Action</th></tr>");
   
   for(var i=0;i<count;i++){
      var jsonObj =res[i];
@@ -21,7 +21,8 @@ var table=$('#div1').children();
    // rowString.append(im);
 
  }
- $("table td:nth-child(6)").append('<img  src="images/4.png" id="projectId" class="remov"/>');
+ var im=$("table td:nth-child(6)").append('<img  src="images/4.png" id="projectId" class="remov"/>');
+ //$(this).attr('id',   this.id + '_' + projectId);
  $("table td:nth-child(6)").append('<h5 id=""><a href="update.html">Update</a></h5>');
 
 })
@@ -33,11 +34,14 @@ var table=$('#div1').children();
 //delete the project
 $('#projectId').click(function() {
 
+	
+	//jsonObj[i].projectId==rem;
+//arr=removejsonObj(arr,["projectId"]);
 	id=$(this).parent().attr("#projectId");
-	//remove("projectId");
+//remove("projectId");
 	//('projectId').remove();
 	//$(this).attr('projectId');
-	var url="/SmartBook/project?mode=3&projectId=1";
+	var url="http://localhost:8080/ajith/project?mode=3&projectId=1";
 	$.ajax(url)
 	.done(function(result){
 		//console.log(result);
