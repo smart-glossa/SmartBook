@@ -36,7 +36,7 @@ li {
 	text-align: center;
 	padding-right: 35px;
 	background-color: #757575;
-	
+	padding-top: 0px;
 	font-size: 19px;
 	border: 10px solid #212121;
 	color: white;
@@ -127,10 +127,10 @@ button
 	width: 90px;
 	color: white;
 	height: 40px;
-
 	background-color:#424242;
 	 
 }
+
 button:hover
 {
 	background-color: #2962ff;
