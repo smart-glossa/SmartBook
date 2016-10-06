@@ -28,7 +28,7 @@ function myFunction() {
     var imgDiv = document.createElement("div");
     imgDiv.className = 'imgd';
     var img = document.createElement("img");
-    img.src = 'images/proj.jpg';
+    img.src = '../images/proj.jpg';
     img.id = 'img';
     imgDiv.appendChild(img);
     div3.appendChild(imgDiv);
