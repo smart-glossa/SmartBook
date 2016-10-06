@@ -5,6 +5,7 @@ function signinValidation() {
     if ((userName == "") || (/^\s*$/.test(userName))) {
         alert("User Name can't blank");
     } else if (userName.match(/^[a-zA-Z0-9]*$/)) {
+
     } else {
         alert("Enter User Name here");
     }
