@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+table {
+    border-collapse: collapse;
+    width: 150px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border:3px solid;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: lightgray;
+    color: white;
+}
+.h1
+{
+  background-color: blue;
+  color: white;
+font-family: Algerian;
+  padding: 07px;
+}
+
+#dr
+{
+  float: left;
+  text-align: center;
+  font-style: italic;
+  padding:15px 40px;
+}
+body
+{
+  background-color: lightgray;
+}
+.inputs
+{
+ padding: 1px 20px;
+    border: 0;
+    height: 25px;
+    width: 170px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 0 0 #FFF, 5px 5px 40px 2px #BBB inset;
+    outline: 0;
+}
+
+  
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 20px;
+    width: 150px;
+    height: 400px;
+    background-color:gray;
+}
+
+li a {
+    display: block;
+    color: white;
+    font-family: Algerian;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+
+li a:hover {
+    background-color:#2962ff;
+    color: white;
+    
+}
+#head{
+  float: left;
+}
+
+</style>
+  </head>
+  <body>
+    <div class="h1">
+      <center>
+      <h1>Employee view list</h1>
+    </center>
+    </div>
+    <div id="head">
+    <ul>
+  <li><a href="nav.html">Home</a></li>
+  <hr>
+  <li><a href="prolist.html">project</a></li>
+  <hr>
+  <li><a href="addemp.html">Employee</a></li>
+  <hr>
+  <li><a href="#">Issues</a></li>
+  <hr>
+   <li><a href="#">Report</a></li>
+   <hr>
+  <li><a href="#">Notification</a></li>
+  
+</ul>
+</div>
+<div id="dr">
+<center>
+    <table>
+      <tr>
+      <th>Compleated Projects</th>
+      <th>No Of Projects live</th>
+      <th>Number of project issues</th>
+      <th>Coding</th>
+</tr>
+<tr>
+  <td><input  class="inputs" type="text" name="name" value="" readonly="true"></td>
+<td><input  class="inputs" type="text" name="name" value="" readonly="true"></td>
+<td><input  class="inputs" type="text" name="name" value="" readonly="true"></td>
+<td><input  class="inputs" type="text" name="name" value="" readonly="true"></td>
+</tr>
+    </table>
+  </center>
+  </div>
+  </body>
+</html>
