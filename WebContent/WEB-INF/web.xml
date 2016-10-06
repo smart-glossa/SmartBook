@@ -57,5 +57,13 @@
         <servlet-name>Member</servlet-name>
         <url-pattern>/member  </url-pattern>
     </servlet-mapping>
+<servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>Home.HomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/home  </url-pattern>
+    </servlet-mapping>
 </web-app>
  
