@@ -11,10 +11,10 @@ CREATE TABLE  user (
   pass varchar(50) default NULL,
   imageId bigint(20) default NULL,
   type varchar(50) default NULL,
-  PRIMARY KEY  (`userId),
-  KEY  user_FK_IDX (imageId),
-  CONSTRAINT user_FK FOREIGN KEY (imageId) REFERENCES  image(imageId) ON DELETE CASCADE
-) 
+  PRIMARY KEY  (userId,userName),
+  KEY user_FK_IDX(imageId),
+  CONSTRAINT user_FK FOREIGN KEY (imageId) REFERENCES image (imageId) ON DELETE CASCADE
+)
 
 project:
 
