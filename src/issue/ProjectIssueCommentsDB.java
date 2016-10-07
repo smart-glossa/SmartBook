@@ -17,8 +17,8 @@ public class ProjectIssueCommentsDB {
     		throws ClassNotFoundException, SQLException {
     	 
     	Statement statement = MySqlConstant.getInstance().getCreatedStatement();
-        String query = "Insert into issuecomment(issueId, userId, content,time) Values ('" + comment.getissueId()
-                + "', '" + comment.getUserId() + "','" + comment.getCommentContent() + "','" + comment.getCommentTime()+ "')";
+        String query = "Insert into issuecomment(issueId, userName, content,time) Values ('" + comment.getissueId()
+                + "', '" + comment.getUserName() + "','" + comment.getCommentContent() + "','" + comment.getCommentTime()+ "')";
         statement.execute(query);
        //comment.setCommentId(rs.getLong(0));
     }
@@ -27,8 +27,8 @@ public class ProjectIssueCommentsDB {
     		throws ClassNotFoundException, SQLException {
     	
     	 Statement statement = MySqlConstant.getInstance().getCreatedStatement();
-        String query = "Update issuecomment set issueId =" + project.getissueId() + ", userId='"
-                + project.getUserId() + "', content='" + project.getCommentContent() + "', time='"
+        String query = "Update issuecomment set issueId =" + project.getissueId() + ", userName='"
+                + project.getUserName() + "', content='" + project.getCommentContent() + "', time='"
                 + project.getCommentTime() + "' where commentId = " + project.getCommentId();
         statement.execute(query);
     }
@@ -51,7 +51,7 @@ public class ProjectIssueCommentsDB {
         if (rs.next()) {
             comment.setCommentId(rs.getLong("commentId"));
             comment.setissueId(rs.getLong("issueId"));
-            comment.setUserId(rs.getLong("userId"));
+            comment.setUserName(rs.getString("userName"));
             comment.setCommentContent(rs.getString("content"));
             comment.setCommentTime(rs.getString("time"));
         }
@@ -67,7 +67,7 @@ public class ProjectIssueCommentsDB {
             ProjectCommentsVO gets = new ProjectCommentsVO();
             gets.setCommentId(rs.getLong("commentId"));
             gets.setissueId(rs.getLong("issueId"));
-            gets.setUserId(rs.getLong("userId"));
+            gets.setUserName(rs.getString("userName"));
             gets.setCommentContent(rs.getString("content"));
             gets.setCommentTime(rs.getString("time"));
             comment.add(gets);

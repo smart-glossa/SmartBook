@@ -7,40 +7,41 @@ import java.util.List;
 
 public class ProjectIssueBL {
 
-	 SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
 
-	    public static ProjectIssueBL getObject() {
-	        return new ProjectIssueBL();
-	    }
+    SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
 
-	    public ProjectIssueVO addProjectIssue(int projectId, String description, int finderId, String findTime,int status,
-	            int fixedId, String fixTime) throws ClassNotFoundException, SQLException, ParseException {
-	        
-	    	ProjectIssueVO project = new ProjectIssueVO().setProjectId(projectId).setDescription(description)
-	                .setStatus(status).setFinderId(finderId).setFindTime(sdf.parse(findTime).getTime()).setFixedId(fixedId)
-	                .setFixTime(sdf.parse(fixTime).getTime());
-	        ProjectIssueDB.getObject().addProjectIssue(project);
-	        return project;
-	    }
+    public static ProjectIssueBL getObject() {
+        return new ProjectIssueBL();
+    }
 
-	    public ProjectIssueVO updateProjectIssue(long IssueId,int projectId, String description,int finderId,int status,
-	             int fixedId) throws ClassNotFoundException, SQLException, ParseException {
-	        
-	    	ProjectIssueVO project = new ProjectIssueVO().setProjectId(projectId).setDescription(description)
-	                .setStatus(status).setFinderId(finderId).setFixedId(fixedId)
-	                .setIssueId(IssueId);
-	        ProjectIssueDB.getObject().updateProjectIssue(project);
-	        return project;
-	    }
+    public ProjectIssueVO addProjectIssue(int projectId, String description, String finderName, String findTime,int status,
+            String fixedName, String fixTime) throws ClassNotFoundException, SQLException, ParseException {
+        
+    	ProjectIssueVO project = new ProjectIssueVO().setProjectId(projectId).setDescription(description)
+                .setStatus(status).setFinderName(finderName).setFindTime(sdf.parse(findTime).getTime()).setFixedName(fixedName)
+                .setFixTime(sdf.parse(fixTime).getTime());
+        ProjectIssueDB.getObject().addProjectIssue(project);
+        return project;
+    }
 
-	    public void deleteProjectIssue(int IssueId) throws ClassNotFoundException, SQLException {
-	        ProjectIssueDB.getObject().deleteProjectIssue(IssueId);
-	    }
+    public ProjectIssueVO updateProjectIssue(long issueId,int projectId, String description,String finderName,int status,
+             String fixedName) throws ClassNotFoundException, SQLException, ParseException {
+        
+    	ProjectIssueVO project = new ProjectIssueVO().setProjectId(projectId).setDescription(description)
+                .setStatus(status).setFinderName(finderName).setFixedName(fixedName)
+                .setIssueId(issueId);
+        ProjectIssueDB.getObject().updateProjectIssue(project);
+        return project;
+    }
 
-	    public ProjectIssueVO getProjectIssue(int IssueId) throws ClassNotFoundException, SQLException {
-	        return ProjectIssueDB.getObject().getProjectIssue(IssueId);
-	    }
-	    public List<ProjectIssueVO> GetAlls() throws Exception {
-	        return ProjectIssueDB.getObject().GetIssue();
-	    }
-	}
+    public void deleteProjectIssue(int IssueId) throws ClassNotFoundException, SQLException {
+        ProjectIssueDB.getObject().deleteProjectIssue(IssueId);
+    }
+
+    public ProjectIssueVO getProjectIssue(int IssueId) throws ClassNotFoundException, SQLException {
+        return ProjectIssueDB.getObject().getProjectIssue(IssueId);
+    }
+    public List<ProjectIssueVO> GetAlls() throws Exception {
+        return ProjectIssueDB.getObject().GetIssue();
+    }
+}

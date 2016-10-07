@@ -5,25 +5,26 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class ProjectIssueCommentsBL {
+	
 	SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
 
     public static ProjectCommentsBL getObject() {
         return new ProjectCommentsBL();
     }
 
-    public ProjectCommentsVO addProjectComment(Long issueId, long userId, String content,String time)
+    public ProjectCommentsVO addProjectComment(Long issueId, String userName, String content,String time)
             throws ClassNotFoundException, SQLException, ParseException {
 
-    	ProjectCommentsVO comment = new ProjectCommentsVO().setissueId(issueId).setUserId(userId)
+    	ProjectCommentsVO comment = new ProjectCommentsVO().setissueId(issueId).setUserName(userName)
                 .setCommentContent(content).setCommentTime(time);
         ProjectCommentsDB.getObject().addProjectComment(comment);
         return comment;
     }
 
-    public ProjectCommentsVO updateProjectComment(Long commentId, Long issueId, long userId, String content, String time) 
+    public ProjectCommentsVO updateProjectComment(Long commentId, Long issueId, String userName, String content, String time) 
     		throws ClassNotFoundException, SQLException, ParseException {
         
-    	ProjectCommentsVO comment = new ProjectCommentsVO().setissueId(issueId).setUserId(userId).setCommentContent(content)
+    	ProjectCommentsVO comment = new ProjectCommentsVO().setissueId(issueId).setUserName(userName).setCommentContent(content)
                 .setCommentTime(time).setCommentId(commentId);
         ProjectCommentsDB.getObject().updateProjectComment(comment);
         return comment;
@@ -39,7 +40,7 @@ public class ProjectIssueCommentsBL {
     	return ProjectCommentsDB.getObject().getProjectComment(commentId);
     }
     public List<ProjectCommentsVO> GetAlls() throws Exception {
-        return ProjectCommentsDB.getObject().getComments();
+        return ProjectCommentsDB.getObject().Getcomment();
     }
 
 }

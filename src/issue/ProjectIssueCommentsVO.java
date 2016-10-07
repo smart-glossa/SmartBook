@@ -4,7 +4,7 @@ public class ProjectIssueCommentsVO {
 
 	long commentId;
     long issueId = -1l;
-    long userId;
+    String userName;
     String content;
     String time;
     
@@ -22,11 +22,11 @@ public class ProjectIssueCommentsVO {
         this.issueId = issueId;
         return this;
     }
-    public long getUserId() {
-        return userId;
+    public String getUserName() {
+        return userName;
     }
-    public ProjectCommentsVO setUserId(long userId) {
-        this.userId = userId;
+    public ProjectCommentsVO setUserName(String userName) {
+        this.userName = userName;
         return this;
     }
     public String getCommentContent() {

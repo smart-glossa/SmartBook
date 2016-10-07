@@ -17,7 +17,7 @@ public class ProjectIssueCommentsServlet {
     
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws JSONException {
     	
-    	int operation = Integer.parseInt(request.getParameter("operation"));
+    	 int operation = Integer.parseInt(request.getParameter("operation"));
 		 try
 		 {
 	        switch(operation) {
@@ -48,13 +48,12 @@ public class ProjectIssueCommentsServlet {
 	        
 			JSONObject result = new JSONObject();
 	        Long issueId = Long.parseLong(request.getParameter("issueId"));
-	        long userId=Long.parseLong(request.getParameter("userId"));
+	        String userName=request.getParameter("userName");
 	        String content = request.getParameter("content");
 	        String time = request.getParameter("time");
 	        
 	        try {
-	            ProjectCommentsVO comment = ProjectCommentsBL.getObject().addProjectComment(issueId,
-	            		userId, content, time);
+	            ProjectCommentsVO comment = ProjectCommentsBL.getObject().addProjectComment(issueId, userName, content, time);
 	            result.put("status", 1);
 	            result.put("projectId", comment.getissueId());
 	        } catch (Exception e) {
@@ -72,12 +71,12 @@ public class ProjectIssueCommentsServlet {
 	    	JSONObject result = new JSONObject();
 	        long commentId =  Long.parseLong(request.getParameter("commentId"));
 	        long issueId =  Long.parseLong(request.getParameter("issueId"));
-	        long userId = Long.parseLong(request.getParameter("userId"));
+	        String userName = request.getParameter("userName");
 	        String content =  request.getParameter("content");
 	        String time =     request.getParameter("time");
 	        
 	        try {
-	            ProjectCommentsBL.getObject().updateProjectComment(commentId, issueId,userId, content, time);
+	            ProjectCommentsBL.getObject().updateProjectComment(commentId, issueId, userName, content, time);
 	            result.put("status", 1);
 	        } catch (Exception e) {
 	            result.put("Status", 0);
@@ -116,7 +115,7 @@ public class ProjectIssueCommentsServlet {
 	            if (comment.getCommentId() != -1l) {
 	                result.put("commentId", comment.getCommentId());
 	                result.put("issueId", comment.getissueId());
-	                result.put("userId" , comment.getUserId());
+	                result.put("userName" , comment.getUserName());
 	                result.put("content"  , comment.getCommentContent());
 	                result.put("time"     , comment.getCommentTime());
 	            }
@@ -135,13 +134,13 @@ public class ProjectIssueCommentsServlet {
 	         JSONArray getall = new JSONArray();
 
 	         try {
-	             List<ProjectCommentsVO> allcomment = ProjectCommentsBL.getObject().getAllComments();
+	             List<ProjectCommentsVO> allcomment = ProjectCommentsBL.getObject().GetAlls();
 	             for (ProjectCommentsVO vo : allcomment) {
 	                 if (vo.getCommentId() != 1l) {
 	                     JSONObject get = new JSONObject();
 	                     get.put("commentId", vo.getCommentId());
 	                     get.put("issueId", vo.getissueId());
-	                     get.put("userId", vo.getUserId());
+	                     get.put("userName", vo.getUserName());
 	                     get.put("content",  vo.getCommentContent());
 	                     get.put("time", vo.getCommentTime());
 	                     getall.put(get);
@@ -156,5 +155,3 @@ public class ProjectIssueCommentsServlet {
 	     }
 
 		}
-
-
