@@ -1,0 +1,137 @@
+<html>
+<head>
+<script src="../js/jquery-1.12.3.js"></script>
+        <script src="../js/getonepro.js" type="text/javascript"></script>
+<style>
+table {
+    border-collapse: collapse;
+    width: 150px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border:3px solid;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: lightgray;
+    color: white;
+}
+.h1
+{
+  background-color: #2962ff;
+  color: white;
+  height: 75px; 
+  font-family: Algerian;
+  font-size: 15px;
+  text-align: center;
+}
+
+#dr
+{
+  float: left;
+  text-align: center;
+  font-style: italic;
+  padding:15px 40px;
+}
+body
+{
+  background-color: lightgray;
+}
+.inputs
+{
+ padding: 1px 20px;
+    border: 0;
+    height: 25px;
+    width: 170px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 0 0 #FFF, 5px 5px 40px 2px #BBB inset;
+    outline: 0;
+}
+
+  
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 20px;
+    width: 150px;
+    height: 400px;
+    background-color:gray;
+}
+
+li a {
+    display: block;
+    color: white;
+    font-family: Algerian;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+
+li a:hover {
+    background-color:#2962ff;
+    color: white;
+    
+}
+#head{
+  float: left;
+}
+button{
+    background-color: white;
+    color:black;
+    border: 2px solid #4CAf50;
+    padding:10px 40px;
+  }
+
+
+</style>
+  </head>
+  <body>
+    <div class="h1">
+      <center>
+      <h1> view list</h1>
+    </center>
+    </div>
+    <div id="head">
+    <ul>
+  <li><a href="nav.html">Home</a></li>
+  <hr>
+  <li><a href="prolist.html">project</a></li>
+  <hr>
+  <li><a href="addemp.html">Employee</a></li>
+  <hr>
+  <li><a href="#">Issues</a></li>
+  <hr>
+   <li><a href="#">Report</a></li>
+   <hr>
+  <li><a href="#">Notification</a></li>
+  
+</ul>
+</div>
+<div id="d">
+:<input type="text" id="projectId" style="width: 120px; height:35px"/><button id="getpro">submit</button></div>
+<div id="dr">
+<center>
+    <table>
+      <tr>
+      <th>pdate</th>
+      <th>ptitle</th>
+      <th>projectId</th>
+      <th>status</th>
+      <th>dis</th>
+</tr>
+<tr>
+  <td><input  class="inputs" type="text" id="pdate"  readonly="true"></td>
+<td><input  class="inputs" type="text" id="ptitle"   readonly="true"></td>
+<td><input  class="inputs" type="text" id="projectId"  readonly="true"></td>
+<td><input  class="inputs" type="text" id="status"  readonly="true"></td>
+<td><input  class="inputs" type="text" id="dis"  readonly="true"></td>
+</tr>
+    </table>
+  </center>
+  </div>
+</body>
+</html>
