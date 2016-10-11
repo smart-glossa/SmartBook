@@ -1,8 +1,16 @@
 
 create database smartbook;
 
+1. IMAGE TABLE :
 
-USER TABLE :
+CREATE TABLE `image` (
+  `imageId` bigint(20) NOT NULL auto_increment,
+  `imagepath` varchar(50) default NULL,
+  PRIMARY KEY  (`imageId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+
+2. USER TABLE :
 
 CREATE TABLE `user` (
   `Name` varchar(50) default NULL,
@@ -16,7 +24,7 @@ CREATE TABLE `user` (
   CONSTRAINT `user_FK` FOREIGN KEY (`imageId`) REFERENCES `image` (`imageId`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
-PROJECT TABLE :
+3. PROJECT TABLE :
 
 CREATE TABLE `project` (
   `projectId` bigint(20) NOT NULL auto_increment,
@@ -28,16 +36,7 @@ CREATE TABLE `project` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1
 
 
-IMAGE TABLE :
-
-CREATE TABLE `image` (
-  `imageId` bigint(20) NOT NULL auto_increment,
-  `imagepath` varchar(50) default NULL,
-  PRIMARY KEY  (`imageId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1
-
-
-PROJECTMEMBER TABLE :
+4. PROJECTMEMBER TABLE :
 
 CREATE TABLE `projectmember` (
   `memberId` bigint(20) NOT NULL auto_increment,
@@ -47,25 +46,7 @@ CREATE TABLE `projectmember` (
   PRIMARY KEY  (`memberId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
 
-
-ISSUECOMMENT TABLE :
-
-
-CREATE TABLE `issuecomment` (
-  `commentId` bigint(20) NOT NULL auto_increment,
-  `issueId` bigint(20) default NULL,
-  `userName` varchar(20) default NULL,
-  `content` varchar(250) default NULL,
-  `time` varchar(50) default NULL,
-  PRIMARY KEY  (`commentId`),
-  KEY `issuecomment_FKS` (`issueId`),
-  KEY `issuecomment_FKX` (`userName`),
-  CONSTRAINT `issuecomment_FK` FOREIGN KEY (`issueId`) REFERENCES `projectissue` (`issueId`) ON DELETE CASCADE,
-  CONSTRAINT `issuecomment_FKS` FOREIGN KEY (`userName`) REFERENCES `user` (`userName`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1
-
-ISSUE TABLE :
-
+5. ISSUE TABLE :
 
 CREATE TABLE `projectissue` (
   `issueId` bigint(20) NOT NULL auto_increment,
@@ -82,3 +63,23 @@ CREATE TABLE `projectissue` (
   CONSTRAINT `projectissue_FK` FOREIGN KEY (`finderName`) REFERENCES `user` (`userName`) ON DELETE CASCADE,
   CONSTRAINT `projectissue_FKS` FOREIGN KEY (`fixedName`) REFERENCES `user` (`userName`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 
+
+
+6. ISSUECOMMENT TABLE :
+
+CREATE TABLE `issuecomment` (
+  `commentId` bigint(20) NOT NULL auto_increment,
+  `issueId` bigint(20) default NULL,
+  `userName` varchar(20) default NULL,
+  `content` varchar(250) default NULL,
+  `time` varchar(50) default NULL,
+  PRIMARY KEY  (`commentId`),
+  KEY `issuecomment_FKS` (`issueId`),
+  KEY `issuecomment_FKX` (`userName`),
+  CONSTRAINT `issuecomment_FK` FOREIGN KEY (`issueId`) REFERENCES `projectissue` (`issueId`) ON DELETE CASCADE,
+  CONSTRAINT `issuecomment_FKS` FOREIGN KEY (`userName`) REFERENCES `user` (`userName`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1
+
+
+
+
