@@ -1,43 +1,34 @@
 
 create database smartbook;
 
-user:
 
-CREATE TABLE  user (
-  userId bigint(20) NOT NULL auto_increment,
-  Name varchar(50) default NULL,
-  dob varchar(50) default NULL,
-  userName varchar(50) default NULL,
-  pass varchar(50) default NULL,
-  imageId bigint(20) default NULL,
-  type varchar(50) default NULL,
-  PRIMARY KEY  (userId,userName),
-  KEY user_FK_IDX(imageId),
-  CONSTRAINT user_FK FOREIGN KEY (imageId) REFERENCES image (imageId) ON DELETE CASCADE
-)
+USER TABLE :
 
-project:
+CREATE TABLE `user` (
+  `Name` varchar(50) default NULL,
+  `dob` varchar(50) default NULL,
+  `userName` varchar(50) NOT NULL default '',
+  `pass` varchar(50) default NULL,
+  `imageId` bigint(20) default NULL,
+  `type` varchar(50) default NULL,
+  PRIMARY KEY  (`userName`),
+  KEY `user_FK_IDX` (`imageId`),
+  CONSTRAINT `user_FK` FOREIGN KEY (`imageId`) REFERENCES `image` (`imageId`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
-CREATE TABLE project (
-  projectId bigint(20) NOT NULL auto_increment,
-  ptitle varchar(200) default NULL,
-  dis varchar(200) default NULL,
-  pdate varchar(200) default NULL,
-  status varchar(200) default NULL,
+PROJECT TABLE :
+
+CREATE TABLE `project` (
+  `projectId` bigint(20) NOT NULL auto_increment,
+  `ptitle` varchar(200) default NULL,
+  `dis` varchar(200) default NULL,
+  `pdate` varchar(200) default NULL,
+  `status` varchar(200) default NULL,
   PRIMARY KEY  (`projectId`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1
 
-member:
 
-CREATE TABLE  projectmember (
-  memberId bigint(20) NOT NULL auto_increment,
-  projectId bigint(50) default NULL,
-  ptitle varchar(200) default NULL,
-  userName varchar(200) default NULL,
-  PRIMARY KEY  (memberId)
-) 
-
-image:  //image is a  temp  table 
+IMAGE TABLE :
 
 CREATE TABLE `image` (
   `imageId` bigint(20) NOT NULL auto_increment,
@@ -46,35 +37,48 @@ CREATE TABLE `image` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
 
-comment:
+PROJECTMEMBER TABLE :
 
-CREATE TABLE issuecomment (
-  commentId bigint(20) NOT NULL auto_increment,
-  issueId bigint(20) default NULL,
-  userId bigint(20) default NULL,
-  content varchar(250) default NULL,
-  time varchar(50) default NULL,
+CREATE TABLE `projectmember` (
+  `memberId` bigint(20) NOT NULL auto_increment,
+  `projectId` bigint(50) default NULL,
+  `ptitle` varchar(200) default NULL,
+  `userName` varchar(200) default NULL,
+  PRIMARY KEY  (`memberId`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
+
+
+ISSUECOMMENT TABLE :
+
+
+CREATE TABLE `issuecomment` (
+  `commentId` bigint(20) NOT NULL auto_increment,
+  `issueId` bigint(20) default NULL,
+  `userName` varchar(20) default NULL,
+  `content` varchar(250) default NULL,
+  `time` varchar(50) default NULL,
   PRIMARY KEY  (`commentId`),
-  KEY issuecomment_FKS(issueId),
-  KEY issuecomment_FKX(userId),
-  CONSTRAINT issuecomment_FK FOREIGN KEY (issueId) REFERENCES projectissue(issueId) ON DELETE CASCADE,
-  CONSTRAINT issuecomment_FKS FOREIGN KEY (userId) REFERENCES user (userId) ON DELETE CASCADE
-)
+  KEY `issuecomment_FKS` (`issueId`),
+  KEY `issuecomment_FKX` (`userName`),
+  CONSTRAINT `issuecomment_FK` FOREIGN KEY (`issueId`) REFERENCES `projectissue` (`issueId`) ON DELETE CASCADE,
+  CONSTRAINT `issuecomment_FKS` FOREIGN KEY (`userName`) REFERENCES `user` (`userName`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1
 
-issue:
+ISSUE TABLE :
 
-CREATE TABLE projectissue(
-  issueId bigint(20) NOT NULL auto_increment,
-  projectId long default NULL,
-  description varchar(200) default NULL,
-  finderId bigint(20) default NULL,
-  findtime long default NULL,
-   status int(50)default Null,
-  fixedId bigint(20) default NULL,
-  fixtime long default NULL,
-  PRIMARY KEY  (issueId),
-  KEY projectissue_FKS(finderId),
-  KEY issuecomments_FKX(fixedId),
-  CONSTRAINT projectissue_FK FOREIGN KEY(finderId) REFERENCES user(userId) ON DELETE CASCADE,
-  CONSTRAINT projectissue_FKS FOREIGN KEY(fixedId) REFERENCES user(userId) ON DELETE CASCADE
-)
+
+CREATE TABLE `projectissue` (
+  `issueId` bigint(20) NOT NULL auto_increment,
+  `projectId` mediumtext,
+  `description` varchar(200) default NULL,
+  `finderName` varchar(20) default NULL,
+  `findtime` mediumtext,
+  `status` int(50) default NULL,
+  `fixedName` varchar(20) default NULL,
+  `fixtime` mediumtext,
+  PRIMARY KEY  (`issueId`),
+  KEY `projectissue_FKS` (`finderName`),
+  KEY `projectissue_FKX` (`fixedName`),
+  CONSTRAINT `projectissue_FK` FOREIGN KEY (`finderName`) REFERENCES `user` (`userName`) ON DELETE CASCADE,
+  CONSTRAINT `projectissue_FKS` FOREIGN KEY (`fixedName`) REFERENCES `user` (`userName`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 
