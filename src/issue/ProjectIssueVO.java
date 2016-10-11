@@ -5,10 +5,10 @@ public class ProjectIssueVO {
 	long issueId;
     int projectId;
     String description;
-    int finderId;
+    String finderName;
     long findTime;
     int status;
-    int fixedId;
+    String fixedName;
     long fixTime;
     
     public long getIssueId() {
@@ -32,11 +32,11 @@ public class ProjectIssueVO {
         this.description = description;
         return this;
     }
-    public int getFinderId() {
-        return finderId;
+    public String getFinderName() {
+        return finderName;
     }
-    public ProjectIssueVO setFinderId(int finderId) {
-        this.finderId = finderId;
+    public ProjectIssueVO setFinderName(String finderName) {
+        this.finderName = finderName;
         return this;
     }
     public int getStatus()
@@ -55,11 +55,11 @@ public class ProjectIssueVO {
         this.findTime = findTime;
         return this;
     }
-    public int getFixedId() {
-        return fixedId;
+    public String getFixedName() {
+        return fixedName;
     }
-    public ProjectIssueVO setFixedId(int fixedId) {
-        this.fixedId = fixedId;
+    public ProjectIssueVO setFixedName(String fixedName) {
+        this.fixedName = fixedName;
         return this;
     }
     public long getFixTime() {
