@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class MySqlConstant {
     public static String MYSQL_DRIVER = "com.mysql.jdbc.Driver";
-    public static String MYSQL_PATH = "jdbc:mysql://localhost:3306/";
+    public static String MYSQL_PATH = "jdbc:mysql://" + System.getProperty("mysql.ipAddress") + ":3306/";
     public static String DATABASE_NAME = System.getProperty("smartBook.databaseName");
     public static String USERNAME =System.getProperty("mysql.username");
     public static String PASSWORD =System.getProperty("mysql.password");
