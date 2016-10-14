@@ -3,6 +3,7 @@ package Home;
 public class HomeVO {
 	
 	long userId;
+	long userName;
 	long projectId;
 	long issueId;
 	
@@ -12,6 +13,14 @@ public class HomeVO {
 	}
 	public HomeVO setuserId(long userId){
 		this.userId=userId;
+		return this;
+	}
+	public long getuserName()
+	{
+		return userName;
+	}
+	public HomeVO setuserName(long userName){
+		this.userName=userName;
 		return this;
 	}
 	public long getprojectId()

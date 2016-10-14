@@ -62,13 +62,13 @@ public class HomeServlet extends HttpServlet {
 	                if (member.getuserId() != -1l) {
 	                	
 	                    JSONObject rmember = new JSONObject();
-	                    rmember.put("No.Of User",   member.getuserId());
+	                    rmember.put("No.Of User",   member.getuserName());
 	                    rmember.put("No.Of.Project",member.getprojectId());
 	                    rmember.put("No.Of.Issue",  member.getissueId());
 	                    rmembers.put(rmember);
 	                }
 	            }
-	            result.put("status", 1);
+	           // result.put("status", 1);
 	            result.put("members", rmembers);
 	        } catch (Exception e) {
 	            result.put("status", 0);
