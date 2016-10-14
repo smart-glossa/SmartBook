@@ -62,9 +62,9 @@ public class HomeServlet extends HttpServlet {
 	                if (member.getuserId() != -1l) {
 	                	
 	                    JSONObject rmember = new JSONObject();
-	                    rmember.put("No.Of User",   member.getuserName());
-	                    rmember.put("No.Of.Project",member.getprojectId());
-	                    rmember.put("No.Of.Issue",  member.getissueId());
+	                    rmember.put("User",   member.getuserName());
+	                    rmember.put("Project",member.getprojectId());
+	                    rmember.put("Issue",  member.getissueId());
 	                    rmembers.put(rmember);
 	                }
 	            }
