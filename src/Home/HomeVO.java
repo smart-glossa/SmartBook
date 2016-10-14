@@ -4,7 +4,7 @@ public class HomeVO {
 	
 	long userId;
 	long userName;
-	long projectId;
+	long projectId; 
 	long issueId;
 	
 	public long getuserId()

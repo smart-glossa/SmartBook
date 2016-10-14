@@ -19,7 +19,7 @@ public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
    
-    public HomeServlet() {
+    public HomeServlet() { 
         super();
         // TODO Auto-generated constructor stub
     }

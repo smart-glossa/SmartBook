@@ -8,7 +8,7 @@ import java.util.List;
 
 import common.MySqlConstant;
 
-public class HomeDB {
+public class HomeDB { 
 	public static HomeDB getObject() {
         return new HomeDB();
     }
