@@ -35,6 +35,7 @@ $(window).on('load',function() {
 			if(status==1)
 			{
 				window.location.href='prolist.html';
+				
 							}
 	})
 		.fail(function(result) {  

@@ -38,18 +38,68 @@ function desfun(dis)
         }
 }
 </script>
-            
+
+<style>
+.uu {
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 20px;
+    width: 180px;
+    height: 400px;
+    background-color:  gray;
+}
+
+.aa a {
+    display: block;
+    color: white;
+    font-family: Algerian;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.aa a:hover {
+    background-color:#2962ff;
+    color: white;
+    
+}
+.home
+{
+	float:left;
+}
+.p1 a
+{
+    
+    color: white;
+    
+    text-decoration: none;
+}
+ </style>           
 </head>
 <body>
 <div class="head">
 <ul>
 <li class="p">
-<p>AddProject</p>
+<p><a href="addpro.html">AddProject</a></p>
 </li>
-<li class="p1" id="id">ListofLiveProject</li>
+<li class="p1" id="id"><a href="prolist.html">ListofLiveProject</a></li>
 <ul>
 </div>
-<div>
+<div class="home">
+<ul class="uu">
+  <li class="aa"><a href="nav.html">Home</a></li>
+ 
+  <li class="aa"><a href="prolist.html">project</a></li>
+ 
+  <li class="aa"><a href="addemp.html">Employee</a></li>
+  
+  <li class="aa"><a href="issue.html">Issues</a></li>
+  
+   <li class="aa"><a href="#">Report</a></li>
+   
+  <li class="aa"><a href="#">Notification</a></li>
+  
+</ul>
+</div>
+<div id="tab">
 
 <table style="border: none">
 
@@ -68,7 +118,7 @@ function desfun(dis)
 	<hr>
 	<tr>
 	<td>
-	<h3>Duedate:</h3><td><input type="text" id="pdate" /><hr></td>
+	<h3>Duedate:</h3><td><input type="text" id="pdate" onfocus="(this.type='date')" /><hr></td>
 	</tr>	
 	<tr>
 	<td>
