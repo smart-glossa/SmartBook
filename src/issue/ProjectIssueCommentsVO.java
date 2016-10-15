@@ -11,35 +11,35 @@ public class ProjectIssueCommentsVO {
     public long getCommentId() {
         return commentId;
     }
-    public ProjectCommentsVO setCommentId(long commentId) {
+    public ProjectIssueCommentsVO setCommentId(long commentId) {
         this.commentId = commentId;
         return this;
     }
     public long getissueId() {
         return issueId;
     }
-    public ProjectCommentsVO setissueId(long issueId) {
+    public ProjectIssueCommentsVO setissueId(long issueId) {
         this.issueId = issueId;
         return this;
     }
     public String getUserName() {
         return userName;
     }
-    public ProjectCommentsVO setUserName(String userName) {
+    public ProjectIssueCommentsVO setUserName(String userName) {
         this.userName = userName;
         return this;
     }
     public String getCommentContent() {
         return content;
     }
-    public ProjectCommentsVO setCommentContent(String Content) {
+    public ProjectIssueCommentsVO setCommentContent(String Content) {
         this.content = Content;
         return this;
     }
     public String getCommentTime() {
         return  time;
     }
-    public ProjectCommentsVO setCommentTime(String time) {
+    public ProjectIssueCommentsVO setCommentTime(String time) {
         this.time = time;
         return this;
     }

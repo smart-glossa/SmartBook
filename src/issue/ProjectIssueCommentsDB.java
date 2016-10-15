@@ -3,17 +3,19 @@ package issue;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import common.MySqlConstant;
 
 public class ProjectIssueCommentsDB {
 
 
-	public static ProjectCommentsDB getObject() {
-        return new ProjectCommentsDB();
+	public static ProjectIssueCommentsDB getObject() {
+        return new ProjectIssueCommentsDB();
     }
     
-    public void addProjectComment(ProjectCommentsVO comment) 
+    public void addProjectComment(ProjectIssueCommentsVO comment) 
     		throws ClassNotFoundException, SQLException {
     	 
     	Statement statement = MySqlConstant.getInstance().getCreatedStatement();
@@ -23,7 +25,7 @@ public class ProjectIssueCommentsDB {
        //comment.setCommentId(rs.getLong(0));
     }
     
-    public void updateProjectComment(ProjectCommentsVO project) 
+    public void updateProjectComment(ProjectIssueCommentsVO project) 
     		throws ClassNotFoundException, SQLException {
     	
     	 Statement statement = MySqlConstant.getInstance().getCreatedStatement();
@@ -41,10 +43,10 @@ public class ProjectIssueCommentsDB {
         statement.executeUpdate(query);
     }
     
-    public ProjectCommentsVO getProjectComment(long commentId) 
+    public ProjectIssueCommentsVO getProjectComment(long commentId) 
     		throws ClassNotFoundException, SQLException {
        
-    	ProjectCommentsVO comment = new ProjectCommentsVO();
+    	ProjectIssueCommentsVO comment = new ProjectIssueCommentsVO();
         Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Select * from issuecomment where commentId =" + commentId;
         ResultSet rs = statement.executeQuery(query);
@@ -57,14 +59,14 @@ public class ProjectIssueCommentsDB {
         }
         return comment;
     }
-    public List<ProjectCommentsVO> Getcomment()
+    public List<ProjectIssueCommentsVO> Getcomment()
             throws Exception {
-        List<ProjectCommentsVO> comment = new ArrayList<ProjectCommentsVO>();
+        List<ProjectIssueCommentsVO> comment = new ArrayList<ProjectIssueCommentsVO>();
         Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Select *  from issuecomment";
         ResultSet rs = statement.executeQuery(query);
         while (rs.next()) {
-            ProjectCommentsVO gets = new ProjectCommentsVO();
+            ProjectIssueCommentsVO gets = new ProjectIssueCommentsVO();
             gets.setCommentId(rs.getLong("commentId"));
             gets.setissueId(rs.getLong("issueId"));
             gets.setUserName(rs.getString("userName"));
