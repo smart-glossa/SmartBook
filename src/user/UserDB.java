@@ -48,13 +48,13 @@ public class UserDB {
 
     public List<UserVO> getusers()
             throws ClassNotFoundException, SQLException, NullPointerException, NumberFormatException, ParseException {
-        List<UserVO> user = new ArrayList<>();
+        List<UserVO> user = new ArrayList<UserVO>();
         Statement statement = MySqlConstant.getInstance().getCreatedStatement();
-        String query = "Select userId,Name,userName,type from user";
+        String query = "Select Name,userName,type from user";
         ResultSet rs = statement.executeQuery(query);
         while (rs.next()) {
             UserVO gets = new UserVO();
-            gets.setuserId(rs.getInt("userId"));
+            //gets.setuserId(rs.getInt("userId"));
             gets.setName(rs.getString("Name"));
             gets.setUserName(rs.getString("userName"));
             gets.settype(rs.getString("type"));
@@ -65,14 +65,14 @@ public class UserDB {
 
     public List<UserVO> getAdmin(String type)
             throws ClassNotFoundException, SQLException, NullPointerException, NumberFormatException, ParseException {
-        List<UserVO> user = new ArrayList<>();
+        List<UserVO> user = new ArrayList<UserVO>();
         Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Select * from user where type='" + type + "'";
         ResultSet rs = statement.executeQuery(query);
         while (rs.next()) {
 
             UserVO gets = new UserVO();
-            gets.setuserId(rs.getInt("userId"));
+           // gets.setuserId(rs.getInt("userId"));
             gets.setName(rs.getString("Name"));
             gets.setUserName(rs.getString("userName"));
             gets.settype(rs.getString("type"));
@@ -83,7 +83,7 @@ public class UserDB {
 
     public List<UserVO> getlogin(String userName, String pass) throws ClassNotFoundException, SQLException,
             NullPointerException, NumberFormatException, ParseException, JSONException {
-        List<UserVO> user = new ArrayList<>();
+        List<UserVO> user = new ArrayList<UserVO>();
         Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "Select userName,type from user where userName='" + userName + "' AND pass='" + pass + "'";
         ResultSet rs = statement.executeQuery(query);
