@@ -58,7 +58,6 @@ public class HomeServlet extends HttpServlet {
 		JSONArray rmembers = new JSONArray();
 	        try {
 	            List<HomeVO> members = HomeBL.getObject().getCountAll();
-	            //JSONArray rmembers = new JSONArray();
 	            for (HomeVO member : members) {
 	                if (member.getuserId() != -1l) {
 	                	
