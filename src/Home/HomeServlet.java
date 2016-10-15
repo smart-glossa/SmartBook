@@ -55,9 +55,10 @@ public class HomeServlet extends HttpServlet {
 	private void CountValue(HttpServletRequest request, HttpServletResponse response) throws JSONException, IOException {
 		 
 		JSONObject result = new JSONObject();
+		JSONArray rmembers = new JSONArray();
 	        try {
 	            List<HomeVO> members = HomeBL.getObject().getCountAll();
-	            JSONArray rmembers = new JSONArray();
+	            //JSONArray rmembers = new JSONArray();
 	            for (HomeVO member : members) {
 	                if (member.getuserId() != -1l) {
 	                	
@@ -75,7 +76,7 @@ public class HomeServlet extends HttpServlet {
 	            result.put("message", "Internal Error Occurs");
 	            e.printStackTrace();
 	        }
-	        response.getWriter().print(result);
+	        response.getWriter().print(rmembers);
 	    }
 		
 	}

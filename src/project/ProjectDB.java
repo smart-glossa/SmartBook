@@ -55,7 +55,7 @@ public class ProjectDB {
     }
 
     public List<ProjectVO> getproject() throws ClassNotFoundException, SQLException, JSONException, ParseException {
-        List<ProjectVO> tlist = new ArrayList<>();
+        List<ProjectVO> tlist = new ArrayList<ProjectVO>();
         Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "select * from project";
         ResultSet rs = statement.executeQuery(query);
@@ -73,7 +73,7 @@ public class ProjectDB {
     }
 
     public List<ProjectVO> getOnlyproject() throws ClassNotFoundException, SQLException, JSONException, ParseException {
-        List<ProjectVO> tlist = new ArrayList<>();
+        List<ProjectVO> tlist = new ArrayList<ProjectVO>();
         Statement statement = MySqlConstant.getInstance().getCreatedStatement();
         String query = "select projectId,ptitle from project";
         ResultSet rs = statement.executeQuery(query);
