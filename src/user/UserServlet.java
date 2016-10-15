@@ -106,7 +106,6 @@ public class UserServlet extends HttpServlet {
         try {
             UserVO user = UserBL.getObject().getUser(userName);
             if (user.getuserId() != -1l) {
-                result.put("userId", user.getuserId());
                 result.put("Name", user.getName());
                 result.put("userName", user.getUserName());
                 result.put("type", user.gettype());

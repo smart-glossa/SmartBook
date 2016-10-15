@@ -39,7 +39,6 @@ public class UserDB {
         String query = "Select * from user where userName ='" + userName + "'";
         ResultSet rs = statement.executeQuery(query);
         if (rs.next()) {
-            user.setuserId(rs.getInt("userId"));
             user.setName(rs.getString("Name"));
             user.setUserName(rs.getString("userName"));
             user.settype(rs.getString("type"));
