@@ -1,0 +1,166 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/issuecss.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/addproject.css"/>
+	<script src="../js/jquery-1.12.3.js" type="text/javascript">
+</script> 
+<script src="../js/addissue.js"></script>
+
+	<script>
+   
+function validat()
+{
+	 if(document.getElementById("projectId").value == "") {
+        alert("Enter the title");
+      }
+        else if(document.getElementById("description").value == "") {
+        alert("Enter the description");
+    }
+
+        
+        else if (document.getElementById("status").value == "") {
+        alert("Enter the status");
+}
+else
+{
+	desfun(description)
+}
+function desfun(description)
+        {
+          if (/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, \s])*$/.test(description.value))
+          {
+           alert("enter correct dis");
+          }
+         // var regex = /^[a-zA-Z \s]*$/;
+          //if(regex.test($("#dis").val())) {
+           // alert("Valid");
+        //} else {
+           // alert("Invalid");
+        //}
+        }
+        function mouseDown()
+	{
+		document.getElementById("tooltip").style.display="none";
+	}
+	function mouseUp()
+	{
+		document.getElementById("tooltip").style.display="block";
+	}
+
+}
+
+	</script>
+	</head>
+	 <style>
+.uu {
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 20px;
+    width: 180px;
+    height: 400px;
+    background-color:  gray;
+}
+
+.aa a {
+    display: block;
+    color: white;
+    font-family: Algerian;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.p1 a
+{
+    
+    color: white;
+    
+    text-decoration: none;
+}
+
+.aa a:hover {
+    background-color:#2962ff;
+    color: white;
+    
+}
+.home
+{
+	float:left;
+}
+
+
+  </style>     
+<body>
+<body>
+<div class="head">
+<ul>
+<li class="p">
+<p>AddIssue</p>
+</li>
+<li class="p1" id="id"><a href="prolist.html">ListofIssues</a></li>
+<ul>
+</div>
+<div class="home">
+<ul class="uu">
+  <li class="aa"><a href="nav.html">Home</a></li>
+ 
+  <li class="aa"><a href="prolist.html">project</a></li>
+ 
+  <li class="aa"><a href="addemp.html">Employee</a></li>
+  
+  <li class="aa"><a href="#">Issues</a></li>
+  
+   <li class="aa"><a href="#">Report</a></li>
+   
+  <li class="aa"><a href="#">Notification</a></li>
+  
+</ul>
+</div>
+	
+		
+		<div id="tab">
+
+		<table style="border: none">
+			<tr>
+				<td>
+				<h3>ProjectId:</h3></td><td><input type="text" id="projectId" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) ))  return false;"/></td>
+			</tr>
+			<tr>
+				<td>
+				<h3>FinderName:</h3></td><td><textarea class="input" type="text" id="finderName" onkeypress="if ( !isNaN( String.fromCharCode(event.keyCode) ))  return false;"></textarea></td>
+			</tr>
+		
+			<tr>
+				<td>
+				<h3>FindTime:</h3><td><input type="text" id="findTime" onfocus="(this.type='date')" /></td>
+			</tr>
+			<tr>
+				<td>
+				<h3>FixerName:</h3></td><td><textarea class="input" type="text" id="fixedName" onkeypress="if ( !isNaN( String.fromCharCode(event.keyCode) ))  return false;"></textarea></td>
+			</tr>
+		
+			<tr>
+				<td>
+				<h3>FixedTime:</h3><td><input type="text" id="fixTime" onfocus="(this.type='date')" /></td>
+			</tr>		
+			<tr>
+				<td>
+				<h3>Status:</h3></td><td><input type="text" id="status" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) ))  return false;"/><br>
+				</td>
+			</tr>
+			<tr>
+			<td><h3>Description:</h3></td>
+
+		<td><div class="aaa">
+
+	<textarea id="description" placeholder="Enter your message here"></textarea>
+		<div class="but">
+			  <img  src="../images/2.png" id="image" onmouseover="mouseUp()" onmouseout="mouseDown()"/> <br> 
+			<p id="tooltip">Attach files</p>
+			<div class="but1">
+			<button id="send" onclick="validat()">Post</button>
+		</div>
+		</div>
+	</div></td>	</tr>
+		</div>		
+
+</body>
+</html>

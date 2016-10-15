@@ -1,0 +1,58 @@
+
+	
+	#table,th
+	{
+	
+		font-size: 20px;
+	}
+	
+	.aaa
+	{
+		border: 1px solid #bdbdbd;
+		width: 350px;
+		height: 140px;
+		
+	}
+	#description
+	{
+
+		width: 350px;
+		height: 80px;
+	border: none;
+	outline: none;
+	resize:none;
+	}
+	.but
+	{
+		background-color: #e0e0e0;
+		position: relative;
+		height: 50px;
+}
+.but1
+{
+float: right;	
+
+}
+button
+{
+	
+	background-color: blue;
+	width: 60px;
+	color: white;
+}
+#image
+{
+
+		cursor: pointer;
+		float: left;
+}
+ #tooltip
+{
+	float: left;
+	display: none;
+	width: 90px;
+background-color: black;
+color:#fff;
+font-size: 18px;
+
+}
