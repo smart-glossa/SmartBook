@@ -61,7 +61,7 @@ public class ProjectCommentsDB {
 	    }
 	    public List<ProjectCommentsVO> getComments()
 	            throws Exception {
-	        List<ProjectCommentsVO> comment = new ArrayList<>();
+	        List<ProjectCommentsVO> comment = new ArrayList<ProjectCommentsVO>();
 	        Statement statement = MySqlConstant.getInstance().getCreatedStatement();
 	        String query = "Select *  from issuecomment";
 	        ResultSet rs = statement.executeQuery(query);
