@@ -6,10 +6,10 @@
 <script type="text/javascript">
 function validate()
 {
-	 if(document.getElementById("").value == "") {
+	 if(document.getElementById("Ptitle").value == "") {
         alert("Enter the title");
       }
-        else if(document.getElementById("").value == "") {
+        else if(document.getElementById("dis").value == "") {
         alert("Enter the description");
     }
 
@@ -17,7 +17,7 @@ function validate()
         alert("Enter the due");
 }
         else if (document.getElementById("").value == "") {
-        alert("Enter the status");
+        alert("Enter the userName");
 }
 else
 {
@@ -111,20 +111,20 @@ function desfun(dis)
 <table style="border: none">
 <tr>
 <td>
-	<h3>project title:</h3></td><td><input type="text" id="" onkeypress="if ( !isNaN( String.fromCharCode(event.keyCode) ))  return false;"/><hr></td>
+	<h3>project title:</h3></td><td><input type="text" id="Ptitle" onkeypress="if ( !isNaN( String.fromCharCode(event.keyCode) ))  return false;"/><hr></td>
 	</tr>
 	<tr>
 	<td>
-	<h3>description:</h3></td><td><textarea class="input" type="text" id="" onkeypress="if ( !isNaN( String.fromCharCode(event.keyCode) ))  return false;"></textarea><hr></td>
+	<h3>description:</h3></td><td><textarea class="input" type="text" id="dis" onkeypress="if ( !isNaN( String.fromCharCode(event.keyCode) ))  return false;"></textarea><hr></td>
 	</tr>
 	<hr>
 	<tr>
 	<td>
-	<h3>due date:</h3><td><input type="text" id="" /><hr></td>
+	<h3>due date:</h3><td><input type="text" id="ddate" /><hr></td>
 	</tr>
 	<tr>
 	<td>
-	<h3>username:</h3></td><td><input type="text" id="" onkeypress="if ( !isNaN( String.fromCharCode(event.keyCode) ))  return false;"/><hr><br>
+	<h3>username:</h3></td><td><input type="text" id="userName" onkeypress="if ( !isNaN( String.fromCharCode(event.keyCode) ))  return false;"/><hr><br>
 	</td>
 	</tr>
   <tr><td><h3>type</h3></td><td>
