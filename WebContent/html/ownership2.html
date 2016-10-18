@@ -1,0 +1,143 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../css/addproject.css"/>
+<script src="../js/jquery-1.12.3.js"></script>
+<script src="../js/add.js" type="text/javascript" ></script>
+<script type="text/javascript">
+function validate()
+{
+	 if(document.getElementById("").value == "") {
+        alert("Enter the title");
+      }
+        else if(document.getElementById("").value == "") {
+        alert("Enter the description");
+    }
+
+        else if(document.getElementById("").value == "") {
+        alert("Enter the due");
+}
+        else if (document.getElementById("").value == "") {
+        alert("Enter the status");
+}
+else
+{
+	desfun(dis)
+}
+function desfun(dis)
+        {
+          if (/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, \s])*$/.test(dis.value))
+          {
+           alert("enter correct dis");
+          }
+         // var regex = /^[a-zA-Z \s]*$/;
+          //if(regex.test($("#dis").val())) {
+           // alert("Valid");
+        //} else {
+           // alert("Invalid");
+        //}
+        }
+}
+</script>
+
+  <style>
+.uu {
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 20px;
+    width: 180px;
+    height: 400px;
+    background-color:  gray;
+}
+
+.aa a {
+    display: block;
+    color: white;
+    font-family: Algerian;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+.p1 a
+{
+
+    color: white;
+
+    text-decoration: none;
+}
+
+.aa a:hover {
+    background-color:#2962ff;
+    color: white;
+
+}
+.home
+{
+	float:left;
+}
+#tab
+{
+	float: left;
+}
+
+  </style>
+
+</head>
+<body>
+<div class="head">
+<ul>
+<!--<li class="p">
+<p></p>
+</li>-->
+<li class="p1" id="">Ownership</a></li>
+<ul>
+</div>
+<div class="home">
+<ul class="uu">
+  <li class="aa"><a href="nav.html">Home</a></li>
+
+  <li class="aa"><a href="prolist.html">project</a></li>
+
+  <li class="aa"><a href="addemp.html">Employee</a></li>
+
+  <li class="aa"><a href="issue.html">Issues</a></li>
+
+   <li class="aa"><a href="#">Report</a></li>
+
+  <li class="aa"><a href="#">Notification</a></li>
+
+</ul>
+</div>
+<div id="tab">
+
+<table style="border: none">
+<tr>
+<td>
+	<h3>project title:</h3></td><td><input type="text" id="" onkeypress="if ( !isNaN( String.fromCharCode(event.keyCode) ))  return false;"/><hr></td>
+	</tr>
+	<tr>
+	<td>
+	<h3>description:</h3></td><td><textarea class="input" type="text" id="" onkeypress="if ( !isNaN( String.fromCharCode(event.keyCode) ))  return false;"></textarea><hr></td>
+	</tr>
+	<hr>
+	<tr>
+	<td>
+	<h3>due date:</h3><td><input type="text" id="" /><hr></td>
+	</tr>
+	<tr>
+	<td>
+	<h3>username:</h3></td><td><input type="text" id="" onkeypress="if ( !isNaN( String.fromCharCode(event.keyCode) ))  return false;"/><hr><br>
+	</td>
+	</tr>
+  <tr><td><h3>type</h3></td><td>
+    <select class="input" name="type" id="type" >
+    <option selected="selected">Select type</option>
+    <option>Ownership</option>
+    <option>member</option></select><hr></td>
+  </tr>
+	<tr>
+	<td><button id="po" onclick="return validate()">submit</button></td>
+	</tr>
+	</table>
+
+</div>
+</body>
+</html>
