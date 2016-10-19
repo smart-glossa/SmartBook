@@ -2,7 +2,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="../css/addproject.css"/>
 <script src="../js/jquery-1.12.3.js"></script>
-<script src="../js/add.js" type="text/javascript" ></script>
+<script src="../js/.js" type="text/javascript" ></script>
 <script type="text/javascript">
 function validate()
 {
@@ -13,12 +13,10 @@ function validate()
         alert("Enter the description");
     }
 
-        else if(document.getElementById("").value == "") {
+        else if(document.getElementById("Ddate").value == "") {
         alert("Enter the due");
 }
-        else if (document.getElementById("").value == "") {
-        alert("Enter the userName");
-}
+       
 else
 {
 	desfun(dis)
@@ -27,14 +25,9 @@ function desfun(dis)
         {
           if (/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, \s])*$/.test(dis.value))
           {
-           alert("enter correct dis");
+           alert("enter sucess");
           }
-         // var regex = /^[a-zA-Z \s]*$/;
-          //if(regex.test($("#dis").val())) {
-           // alert("Valid");
-        //} else {
-           // alert("Invalid");
-        //}
+        
         }
 }
 </script>
@@ -120,13 +113,9 @@ function desfun(dis)
 	<hr>
 	<tr>
 	<td>
-	<h3>due date:</h3><td><input type="text" id="ddate" /><hr></td>
+	<h3>due date:</h3><td><input type="text" id="Ddate" /><hr></td>
 	</tr>
-	<tr>
-	<td>
-	<h3>username:</h3></td><td><input type="text" id="userName" onkeypress="if ( !isNaN( String.fromCharCode(event.keyCode) ))  return false;"/><hr><br>
-	</td>
-	</tr>
+	
   <tr><td><h3>type</h3></td><td>
     <select class="input" name="type" id="type" >
     <option selected="selected">Select type</option>
