@@ -14,7 +14,7 @@ public class ProjectIssueBL {
         return new ProjectIssueBL();
     }
 
-    public ProjectIssueVO addProjectIssue(int projectId, String description, String finderName, String findTime,int status,
+    public ProjectIssueVO addProjectIssue(int projectId, String description, String finderName, String findTime,String status,
             String fixedName, String fixTime) throws ClassNotFoundException, SQLException, ParseException {
         
     	ProjectIssueVO project = new ProjectIssueVO().setProjectId(projectId).setDescription(description)
@@ -24,7 +24,7 @@ public class ProjectIssueBL {
         return project;
     }
 
-    public ProjectIssueVO updateProjectIssue(long issueId,int projectId, String description,String finderName,int status,
+    public ProjectIssueVO updateProjectIssue(long issueId,int projectId, String description,String finderName,String status,
              String fixedName) throws ClassNotFoundException, SQLException, ParseException {
         
     	ProjectIssueVO project = new ProjectIssueVO().setProjectId(projectId).setDescription(description)

@@ -54,7 +54,7 @@ public class ProjectIssueDB {
             issue.setDescription(rs.getString("description"));
             issue.setFinderName(rs.getString("finderName"));
             issue.setFindTime(rs.getLong("findTime"));
-            issue.setStatus(rs.getInt("status"));
+            issue.setStatus(rs.getString("status"));
             issue.setFixedName(rs.getString("fixedName"));
             issue.setFixTime(rs.getLong("fixTime"));
         }
@@ -73,7 +73,7 @@ public class ProjectIssueDB {
             gets.setDescription(rs.getString("description"));
             gets.setFinderName(rs.getString("finderName"));
             gets.setFindTime(rs.getLong("findTime"));
-            gets.setStatus(rs.getInt("status"));
+            gets.setStatus(rs.getString("status"));
             gets.setFixedName(rs.getString("fixedName"));
             gets.setFixTime(rs.getLong("fixTime"));
             

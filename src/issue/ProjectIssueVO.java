@@ -7,7 +7,7 @@ public class ProjectIssueVO {
     String description;
     String finderName;
     long findTime;
-    int status;
+    String status;
     String fixedName;
     long fixTime;
     
@@ -39,11 +39,11 @@ public class ProjectIssueVO {
         this.finderName = finderName;
         return this;
     }
-    public int getStatus()
+    public String getStatus()
     {
     	return status;
     }
-    public ProjectIssueVO setStatus(int status)
+    public ProjectIssueVO setStatus(String status)
     {
     	this.status=status;
     	return this;

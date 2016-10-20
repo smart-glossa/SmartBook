@@ -61,7 +61,7 @@ public class ProjectIssueServlet extends HttpServlet {
         String description = request.getParameter("description");
         String finderName = request.getParameter("finderName");
         String findTime = request.getParameter("findTime");
-        int status = Integer.parseInt(request.getParameter("status"));
+        String status = request.getParameter("status");
         String fixedName = request.getParameter("fixedName");
         String fixTime = request.getParameter("fixTime");
 
@@ -85,7 +85,7 @@ public class ProjectIssueServlet extends HttpServlet {
         long issueId = Long.parseLong(request.getParameter("issueId"));
         int projectId = Integer.parseInt(request.getParameter("projectId"));
         String description = request.getParameter("description");
-        int status = Integer.parseInt(request.getParameter("status"));
+        String status = request.getParameter("status");
         String finderName = request.getParameter("finderName");
         String fixedName = request.getParameter("fixedName");
 
