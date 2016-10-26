@@ -6,3 +6,5 @@ Steps to build a SmartBook Application:
   ii) mysql.password=root
   iii)mysql.ipAddress=localhost
   iv) smartBook.databaseName=smartbook 
+
+ 
