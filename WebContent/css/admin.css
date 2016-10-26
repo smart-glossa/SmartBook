@@ -1,17 +1,22 @@
 .head {
     background-color: #2979ff;
+    width: 100%;
+    height: 90px;
+
 }
 
 h1 {
     color: #ffffff;
+    padding-top: 22px;
 }
 
 .but {
     float: right;
     border: 0;
-    background-color: #2979ff;
-    text-decoration-color: transparent;
-    color: #ffffff;
+    /*background-color:lightgray;*/
+    text-decoration-color: #2979ff;
+    color: red;
+
 }
 
 #signin {
@@ -45,11 +50,6 @@ h2 {
 #form {
     width: 100%;
     height: 200px;
-}
-
-#sign {
-    float: right;
-    color: #2979f9;
 }
 
 .empty {
@@ -94,10 +94,13 @@ h2 {
     color: #2979ff;
 }
 
-#lbut {
+#lbut,#sign {
     float: right;
-    color: #ffffff;
-    background-color: #2079f9;
-    border: 0;
-    size: 20px;
+    color: #2979ff;
+    font-size:15px; 
+    background-color:lightgray;
+    border: 50px;
+    height: 20px;
+    
+
 }
